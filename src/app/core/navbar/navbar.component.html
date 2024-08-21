@@ -1,102 +1,103 @@
 <mat-toolbar class="toolbar">
-  <div class="w-100 d-flex align-items-center justify-content-between">
-    <div >
-      <app-breadcrumb
-      *ngIf="params"
-      [icon]="params.breadcrumbIcon"
-      [parentLinkTitle]="params.breadcrumbTitle"></app-breadcrumb>
+    <div class="w-100 d-flex align-items-center justify-content-between">
+        <div>
+            <app-breadcrumb
+                *ngIf="params"
+                [icon]="params.breadcrumbIcon"
+                [parentLinkTitle]="params.breadcrumbTitle"></app-breadcrumb>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-end">
+            <span class="flex-spacer"></span>
+            <mat-form-field>
+                <!-- <mat-label>Langue</mat-label> -->
+                <mat-select [(value)]="selectedLanguage">
+                    <mat-select-trigger>
+                        <img
+                            *ngIf="selectedLanguage === 'Eng (US)'"
+                            src="assets/icon/navbarIcon/eng.svg"
+                            alt="Drapeau anglais"
+                            class="lang-flag" />
+                        <img
+                            *ngIf="selectedLanguage === 'Fr (FR)'"
+                            width="25"
+                            src="assets/icon/navbarIcon/fr-drap.svg"
+                            alt="Drapeau français"
+                            class="lang-flag" />
+                        {{ selectedLanguage }}
+                        <i class="bi bi-chevron-down"></i>
+                    </mat-select-trigger>
+                    <mat-option value="Eng (US)">
+                        <img src="assets/icon/navbarIcon/eng.svg" alt="Drapeau anglais" class="lang-flag" />
+                        Eng
+                    </mat-option>
+                    <mat-option value="Fr (FR)">
+                        <img
+                            src="assets/icon/navbarIcon/fr-drap.svg"
+                            width="25"
+                            alt="Drapeau français"
+                            class="lang-flag" />
+                        Fr
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <!----user log-------------->
+            <div class="user-nav">
+                <button mat-icon-button [matMenuTriggerFor]="menu" (menuOpened)="menuOpen()" (menuClosed)="menuClose()">
+                    <img src="assets/icon/navbarIcon/User.svg" width="28" alt="" />
+                    <div class="name-role">
+                        <span class="name"><b>{{ userName }}</b></span>
+                        <span class="role">{{ roleUser }}</span>
+                    </div>
+                    <i class="bi bi-chevron-down" *ngIf="!isMenuOpen"></i>
+                    <i class="bi bi-chevron-up" *ngIf="isMenuOpen"></i>
+                </button>
+
+                <mat-menu #menu="matMenu" class="menu-user-nav">
+                    <button mat-menu-item>
+                        <img src="assets/icon/navbarIcon/User.svg" width="28" alt="" />
+                        Profile
+                        <i class="bi bi-chevron-right right-icon"></i>
+                    </button>
+                    <button mat-menu-item [routerLink]="'/authentification/login'">
+                        <span class="material-icons p-1">logout</span>
+                        Logout
+                        <i class="bi bi-chevron-right right-icon"></i>
+                    </button>
+                </mat-menu>
+            </div>
+
+            <!------------------- bell --------------------->
+
+            <div class="bell-nav">
+                <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
+                    <i class="bi bi-bell notification-icon custom-image"></i>
+                    <mat-badge [matBadge]="notificationCount"></mat-badge>
+                </button>
+                <!--menu-->
+                <mat-menu #notificationMenu="matMenu">
+                    <button mat-menu-item disabled>
+                        <h2 class="title">Notifications</h2>
+                    </button>
+                    <button mat-menu-item (click)="handleNotificationClick()">
+                        <span><i class="bi bi-exclamation-circle"></i></span>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </button>
+                    <button mat-menu-item (click)="handleNotificationClick()">
+                        <span><i class="bi bi-exclamation-circle"></i></span>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </button>
+                    <button mat-menu-item (click)="handleNotificationClick()">
+                        <span><i class="bi bi-exclamation-circle"></i></span>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </button>
+                    <button mat-menu-item (click)="handleNotificationClick()">
+                        <span><i class="bi bi-exclamation-circle"></i></span>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
     </div>
-
-    <div class=" d-flex align-items-center justify-content-end">
-      <span class="flex-spacer"></span>
-      <mat-form-field>
-          <!-- <mat-label>Langue</mat-label> -->
-          <mat-select [(value)]="selectedLanguage">
-              <mat-select-trigger>
-                  <img
-                      *ngIf="selectedLanguage === 'Eng (US)'"
-                      src="assets/icon/navbarIcon/eng.svg"
-                      alt="Drapeau anglais"
-                      class="lang-flag" />
-                  <img
-                      *ngIf="selectedLanguage === 'Fr (FR)'"
-                      width="25"
-                      src="assets/icon/navbarIcon/fr-drap.svg"
-                      alt="Drapeau français"
-                      class="lang-flag" />
-                  {{ selectedLanguage }}
-                  <i class="bi bi-chevron-down"></i>
-              </mat-select-trigger>
-              <mat-option value="Eng (US)">
-                  <img src="assets/icon/navbarIcon/eng.svg" alt="Drapeau anglais" class="lang-flag" />
-                  Eng
-              </mat-option>
-              <mat-option value="Fr (FR)">
-                  <img src="assets/icon/navbarIcon/fr-drap.svg" width="25" alt="Drapeau français" class="lang-flag" />
-                  Fr
-              </mat-option>
-          </mat-select>
-      </mat-form-field>
-
-      <!----user log-------------->
-      <div class="user-nav">
-          <button mat-icon-button [matMenuTriggerFor]="menu" (menuOpened)="menuOpen()" (menuClosed)="menuClose()">
-              <img src="assets/icon/navbarIcon/User.svg" width="28" alt="" />
-              <div class="name-role">
-                  <span class="name"><b>{{ userName }}</b></span>
-                  <span class="role">{{ roleUser }}</span>
-              </div>
-              <i class="bi bi-chevron-down" *ngIf="!isMenuOpen"></i>
-              <i class="bi bi-chevron-up" *ngIf="isMenuOpen"></i>
-          </button>
-
-          <mat-menu #menu="matMenu" class="menu-user-nav">
-              <button mat-menu-item>
-                  <img src="assets/icon/navbarIcon/User.svg" width="28" alt="" />
-                  Profile
-                  <i class="bi bi-chevron-right right-icon"></i>
-              </button>
-              <button mat-menu-item>
-                  <span class="material-icons p-1">logout</span>
-                  Logout
-                  <i class="bi bi-chevron-right right-icon"></i>
-              </button>
-          </mat-menu>
-      </div>
-
-      <!------------------- bell --------------------->
-
-      <div class="bell-nav">
-          <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
-              <i class="bi bi-bell notification-icon custom-image"></i>
-              <mat-badge [matBadge]="notificationCount"></mat-badge>
-          </button>
-          <!--menu-->
-          <mat-menu #notificationMenu="matMenu">
-              <button mat-menu-item disabled>
-                  <h2 class="title">Notifications</h2>
-              </button>
-              <button mat-menu-item (click)="handleNotificationClick()">
-                  <span><i class="bi bi-exclamation-circle"></i></span>
-                  <p>Lorem ipsum dolor sit amet consectetur.</p>
-              </button>
-              <button mat-menu-item (click)="handleNotificationClick()">
-                  <span><i class="bi bi-exclamation-circle"></i></span>
-                  <p>Lorem ipsum dolor sit amet consectetur.</p>
-              </button>
-              <button mat-menu-item (click)="handleNotificationClick()">
-                  <span><i class="bi bi-exclamation-circle"></i></span>
-                  <p>Lorem ipsum dolor sit amet consectetur.</p>
-              </button>
-              <button mat-menu-item (click)="handleNotificationClick()">
-                  <span><i class="bi bi-exclamation-circle"></i></span>
-                  <p>Lorem ipsum dolor sit amet consectetur.</p>
-              </button>
-          </mat-menu>
-      </div>
-    </div>
-  </div>
-
-
-
 </mat-toolbar>

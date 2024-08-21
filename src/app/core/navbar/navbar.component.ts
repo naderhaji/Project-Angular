@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from 'src/app/services/navbar/navbar.service';
 import { INavPrameters } from '../models/navbar';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
@@ -13,7 +14,10 @@ export class NavbarComponent implements OnInit {
 
     params!: INavPrameters;
     name!: unknown;
-    constructor(public navbar: NavbarService) {}
+    constructor(
+        public navbar: NavbarService,
+        private router: Router
+    ) {}
 
     ngOnInit(): void {
         this.navbar.currentPrameters.subscribe((res: INavPrameters) => {
@@ -33,5 +37,9 @@ export class NavbarComponent implements OnInit {
 
     menuClose() {
         this.isMenuOpen = false;
+    }
+
+    logout() {
+        this.router.navigate(['authentification/login']);
     }
 }

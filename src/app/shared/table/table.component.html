@@ -67,11 +67,11 @@
             <ng-container *ngFor="let disCol of displayedColumns" matColumnDef="{{disCol}}">
                 <th mat-header-cell mat-sort-header *matHeaderCellDef>{{header[disCol]}}</th>
                 <td mat-cell *matCellDef="let element">
-                    <ng-container *ngIf="isObject(element[disCol]); else elseBlock">
-                        <span> {{element[disCol].name}} </span>
+                    <ng-container *ngIf="element[disCol] && isObject(element[disCol]); else elseBlock">
+                        <span>{{ element[disCol]?.name }}</span>
                     </ng-container>
                     <ng-template #elseBlock>
-                        <span [ngClass]="element[disCol]"> {{element[disCol]}} </span>
+                        <span [ngClass]="element[disCol]">{{ element[disCol] }}</span>
                     </ng-template>
                 </td>
             </ng-container>

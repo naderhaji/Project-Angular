@@ -1,0 +1,19 @@
+<app-table [header]="headers" 
+           [allData]="packageList" 
+           [actionButtons]="actionButtons"
+           [exportName]="'Packages'"
+           (paginationAction)="onPageChange($event)"
+           (onSearch)="searchPackage($event)"
+           [totalLength]="totalLength"
+           (setStatus)="setStatusPackage($event)"
+           (deleteRow)="deletePackage($event)"
+           (readOnly)="readOnly($event)"
+           (editRow)="editPackage($event)"></app-table>
+    
+    
+    
+    
+    
+    
+    
+    

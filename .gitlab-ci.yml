@@ -1,0 +1,198 @@
+stages:
+  - sonar
+  - build
+  - deploy
+  - Test-Auto
+  
+sonarscan:
+  extends: .sonarscan
+
+
+build:
+  extends: .build
+  stage: build
+
+# Tc_Login_GAH:
+#   image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
+#   stage: Test-Auto
+#   script:
+#     # install dependencies
+#     - npm install --legacy-peer-deps
+#     - npm install -g npm@8.19.2
+
+#     # start the server in the background
+#     - npm start &
+#     # run Cypress tests 
+#     #- npm run cypress-dashboard-run 
+#     - npx cypress run --spec  "cypress/e2e/Login.cy.ts"  --browser chrome
+  
+#   artifacts:
+#     when: always
+#     name: "$CI_JOB_NAME"
+#     paths:
+#       - /builds/abridia/freightsure/admin/frontend/gah/frontend/cypress/reports/html
+#     expire_in: 3 week
+#   tags:
+#     - vm    
+    
+# Tc_Deployment_GAH:
+#   image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
+#   stage: Test-Auto
+#   script:
+#     # install dependencies
+#     - npm install --legacy-peer-deps
+#     - npm install -g npm@8.19.2
+
+#     # start the server in the background
+#     - npm start &
+#     # run Cypress tests
+#     - npx cypress run --spec  "cypress/e2e/Deployment.cy.ts"  --browser chrome
+#   #when: manual
+#   artifacts:
+#     when: always
+#     name: "$CI_JOB_NAME"
+#     paths:
+#       - /builds/abridia/freightsure/admin/frontend/gah/frontend/cypress/reports/html
+#     expire_in: 3 week
+#   tags:
+#     - local    
+
+Tc_Company_GAH:
+  image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
+  stage: Test-Auto
+  script:
+    # install dependencies
+    - npm install --legacy-peer-deps
+    - npm install -g npm@8.19.2
+
+    # start the server in the background
+    - npm start &
+    # run Cypress tests
+    - npx cypress run --spec  "cypress/e2e/Company.cy.ts"  --browser chrome
+  #when: manual
+  artifacts:
+    when: always
+    name: "$CI_JOB_NAME"
+    paths:
+      - /builds/abridia/freightsure/admin/frontend/gah/frontend/cypress/reports/html
+    expire_in: 3 week
+  tags:
+    - local   
+
+# Tc_Subscription_GAH:
+#   image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
+#   stage: Test-Auto
+#   script:
+#     # install dependencies
+#     - npm install --legacy-peer-deps
+#     - npm install -g npm@8.19.2
+
+#     # start the server in the background
+#     - npm start &
+#     # run Cypress tests
+#     - npx cypress run --spec  "cypress/e2e/Subscriptions.cy.ts"  --browser chrome
+#   #when: manual
+#   artifacts:
+#     when: always
+#     name: "$CI_JOB_NAME"
+#     paths:
+#       - /builds/abridia/freightsure/admin/frontend/gah/frontend/cypress/videos/Subscriptions.cy.ts.mp4
+#     expire_in: 3 week
+#   tags:
+#     - local
+
+Tc_Users_GAH:
+  image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
+  stage: Test-Auto
+  script:
+    # install dependencies
+    - npm install --legacy-peer-deps
+    - npm install -g npm@8.19.2
+
+    # start the server in the background
+    - npm start &
+    # run Cypress tests
+    - npx cypress run --spec  "cypress/e2e/Users.cy.ts"  --browser chrome
+  #when: manual
+  artifacts:
+    when: always
+    name: "$CI_JOB_NAME"
+    paths:
+      - /builds/abridia/freightsure/admin/frontend/gah/frontend/cypress/reports/html
+    expire_in: 3 week
+  tags:
+    - local
+
+# Tc_Iot-devices_GAH:
+#   image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
+#   stage: Test-Auto
+#   script:
+#     # install dependencies
+#     - npm install --legacy-peer-deps
+#     - npm install -g npm@8.19.2
+
+#     # start the server in the background
+#     - npm start &
+#     # run Cypress tests
+#     - npx cypress run --spec  "cypress/e2e/Iotdevices.cy.ts"  --browser chrome
+#   #when: manual
+#   artifacts:
+#     when: always
+#     name: "$CI_JOB_NAME"
+#     paths:
+#       - /builds/abridia/freightsure/admin/frontend/gah/frontend/cypress/videos/Iotdevices.cy.ts.mp4
+#     expire_in: 3 week
+#   tags:
+#     - local
+# Tc_Packages_GAH:
+#   image: cypress/browsers:node-20.9.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
+#   stage: Test-Auto
+#   script:
+#     # install dependencies
+#     - npm install --legacy-peer-deps
+#     - npm install -g npm@8.19.2
+
+#     # start the server in the background
+#     - npm start &
+#     # run Cypress tests
+#     - npx cypress run --spec  "cypress/e2e/Packages.cy.ts"  --browser chrome
+#   #when: manual
+#   artifacts:
+#     when: always
+#     name: "$CI_JOB_NAME"
+#     paths:
+#       - /builds/abridia/freightsure/admin/frontend/gah/frontend/cypress/videos/Packages.cy.ts.mp4
+#     expire_in: 3 week
+#   tags:
+#     - local
+k8s-deploy:develop:
+  extends: .deploy
+  variables:
+    HELM_OPTS: "--set ingress.host=gah-frontend.${DEVELOP_DOMAIN}"
+  tags:
+    - abridia
+
+
+
+
+include:
+  - project: 'library/stages'
+    ref: master
+    file: 'gitlab/sonar/sonarscan_hidden.yaml'
+  - project: 'library/stages'
+    ref: master
+    file: 'gitlab/helm/deploy_hidden.yaml'
+  - project: 'library/stages'
+    ref: master
+    file: 'gitlab/kaniko/build2.yaml'
+  - project: 'library/stages'
+    ref: master
+    file: 'gitlab/helm/staging_hidden.yaml'
+  - project: 'library/stages'
+    ref: master
+    file: '/gitlab/footer.yaml'
+
+
+
+
+

@@ -1,0 +1,23 @@
+@import '../../../../../assets/style/buttons';
+@import '../../../../../assets/style/input';
+@import '../../../../../assets/style/toast';
+.custom-checkbox{
+    width: Fixed (154px);
+    height: Fixed (56px);
+    top: 222px;
+    left: 861px;
+    padding: 8px, 12px, 8px, 12px;
+    gap: 12px;
+    
+    }
+    
+    
+    .example-margin {
+       margin: 0 9px;
+       color: primary;
+    }
+    
+    ::ng-deep .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background{
+        border-color: #4b41d9 !important;
+        background-color: #4b41d9 !important;
+    }

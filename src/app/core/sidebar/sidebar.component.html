@@ -1,0 +1,38 @@
+<div class="sidebar">
+    <div class="logo">
+        <img [src]="'assets/logo-principal.png'" style="width: 54%" alt="image" />
+        <div class="logo_name1">
+            <p class="logo1">GAH</p>
+        </div>
+        <!--
+    <img
+    [src]="'assets/widget_icons/eye_slash.png'"
+    routerLinkActive="router-link-active"
+
+    class="imggroup"
+    alt="image"
+    /> -->
+    </div>
+    <div class="menu">
+        <div *ngFor="let menuItem of menuItems" [ngClass]="{ link: true, 'nav-link': menuItem.isActive }">
+            <div
+                class="link_name"
+                [routerLink]="menuItem.route"
+                *ngIf="!menuItem.role || checkUserRole(menuItem.role)"
+                [class.disabled]="menuItem.disabled"
+                [attr.disabled]="menuItem.disabled ? true : null">
+                <i>
+                    <img
+                        [src]="
+              menuItem.isActive ? menuItem.activeIcon : menuItem.inactiveIcon
+            "
+                        class="logo_name sizeImg"
+                        alt="" />
+                </i>
+                <div class="icon-label" [ngClass]="{ 'icon-label--green': menuItem.isActive }">
+                    <span [class.disabled]="menuItem.disabled"> {{ menuItem.label }} </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

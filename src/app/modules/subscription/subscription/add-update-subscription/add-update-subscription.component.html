@@ -1,0 +1,42 @@
+<div class="container-add-update-subscription">
+    <div class="button-contain d-flex justify-content-center align-items-center pe-2">
+        <div class="box-group">
+            <mat-button-toggle-group
+                name="fontStyle"
+                aria-label="Font Style"
+                class="custom-button-toggle"
+                [(ngModel)]="selectedFontStyle">
+                <mat-button-toggle
+                    disabled
+                    *ngFor="let button of toggleList"
+                    [ngClass]="{ 'mat-button-toggle-checked': currentStep == button.name }"
+                    value="bold">
+                    {{button.name}}</mat-button-toggle
+                >
+            </mat-button-toggle-group>
+        </div>
+    </div>
+    <div class="body-add-update-subscription">
+        <!-- Company details -->
+        <app-company-details *ngIf="currentStep==='Company Details'"></app-company-details>
+        <!-- Offer selection -->
+        <app-offer-selection *ngIf="currentStep==='Offer Selection'"></app-offer-selection>
+        <!-- Options -->
+        <app-options *ngIf="currentStep==='Options'"></app-options>
+        <!-- Summary -->
+        <app-summary *ngIf="currentStep==='Summary'"></app-summary>
+    </div>
+
+    <div class="button-blue d-flex justify-content-center align-items-center">
+        <button
+            mat-raised-button
+            class="button-form-transparent"
+            [disabled]="currentStep==='Company Details'"
+            (click)="previousStep()">
+            previous
+        </button>
+        <button mat-raised-button class="button-form-bleu" [disabled]="currentStep==='Summary'" (click)="nextStep()">
+            Next
+        </button>
+    </div>
+</div>

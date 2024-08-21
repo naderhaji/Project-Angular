@@ -1,0 +1,88 @@
+<div class="dialog-container ">
+
+  <div class="header-modal position-relative">
+    <h2 mat-dialog-title>{{ data?.title }}</h2>
+
+    <mat-dialog-actions class="position-absolute top-0 end-0">
+      <button mat-button mat-dialog-close class="button-close">
+        <img src="assets/icon/sidebarIcon/x.svg" />
+      </button>
+    </mat-dialog-actions>
+  </div>
+
+  <mat-dialog-content>
+    <form [formGroup]="IOTdeviceForm">
+      <div class="row mb-4">
+        <div class="col">
+          <label>Serial Number</label>
+          <mat-form-field appearance="outline" class="input-modal" class="isFieldInvalid">
+            <input matInput formControlName="serialNumber" placeholder="Serial Number" />
+
+            <mat-error *ngIf="submitted && IOTdeviceForm.get('SerialNumber')?.hasError('required')">Serial Number is
+              <strong>required</strong></mat-error>
+
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <label>Device Type</label>
+          <mat-form-field class="form-input-select">
+            <i class="bi bi-chevron-down"></i>
+            <mat-label>Device Type</mat-label>
+            <mat-error *ngIf="submitted && IOTdeviceForm.get('IotDeviceTypeId')?.hasError('required')">Device Type is
+              <strong>required</strong></mat-error>
+            <mat-select formControlName="IotDeviceTypeId">
+              <mat-option *ngFor="let devicetype of devices" [value]="devicetype.id">{{ devicetype.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+
+
+      <div class="row mb-4">
+
+        <div class="col">
+          <label>Brand</label>
+          <mat-form-field class="form-input-select">
+            <i class="bi bi-chevron-down"></i>
+            <mat-label>Brand</mat-label>
+            <mat-error *ngIf="submitted && IOTdeviceForm.get('IotDeviceBrandId')?.hasError('required')">brand is
+              <strong>required</strong></mat-error>
+            <mat-select formControlName="IotDeviceBrandId">
+              <mat-option *ngFor="let brand of brands" [value]="brand.id">{{ brand.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col">
+          <label>Sensors</label>
+          <mat-form-field class="form-input-select">
+            <i class="bi bi-chevron-down"></i>
+            <mat-label>Sensors</mat-label>
+            <mat-error *ngIf="submitted && IOTdeviceForm.get('iotDeviceSensors')?.hasError('required')">Sensors is
+              <strong>required</strong></mat-error>
+            <mat-select formControlName="sensors" multiple>
+              <mat-option *ngFor="let Sensor of sensors" [value]="Sensor.id">{{ Sensor.name }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+    </form>
+  </mat-dialog-content>
+
+
+
+  <div class="button-blue d-flex justify-content-center align-items-center ">
+    <button mat-raised-button class="button-form-bleu" (click)="actionToCall()">Save</button>
+
+  </div>
+
+
+
+
+
+
+</div>

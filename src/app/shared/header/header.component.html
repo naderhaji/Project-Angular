@@ -1,0 +1,17 @@
+<div class="button-contain d-flex  align-items-center pe-5 ps-5">
+    <div class="card-group">
+        <app-card
+            *ngFor="let card of Cards"
+            [icon]="card.icon"
+            [description]="card.description"
+            [num_stat]="card.num_stat">
+        </app-card>
+    </div>
+    <app-button-toggles
+        *ngIf="toggleList"
+        [toggleList]="toggleList"
+        (toggleHandler)="changetoggle($event)"></app-button-toggles>
+    <div *ngIf="buttonLabel">
+        <button (click)="addNewElement()" mat-raised-button>+ {{buttonLabel}}</button>
+    </div>
+</div>

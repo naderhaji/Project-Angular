@@ -1,0 +1,14 @@
+<app-header [Cards]="Cards" [buttonLabel]="'Add user'" (addElement)="addUser()"></app-header>
+<app-table
+    [header]="headers"
+    [allData]="users"
+    [actionButtons]="actionButtons"
+    [totalLength]="totalLength"
+    [pageSize]="pageSize"
+    [exportName]="'Users_list'"
+    (editRow)="editUser($event)"
+    (deleteRow)="openDeleteDialog($event)"
+    (setStatus)="enableUser($event)"
+    (onSearch)="onSearch($event)"
+    (paginationAction)="onPageChange($event)">
+</app-table>

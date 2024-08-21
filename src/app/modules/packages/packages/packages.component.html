@@ -1,0 +1,9 @@
+<app-header
+    [buttonLabel]="buttonLabel"
+    [toggleList]="toggleList"
+    (toggleHandler)="changetoggle($event)"
+    (addElement)="addElement()"></app-header>
+<app-packages-list *ngIf="selectedtoggle === 'Packages'"></app-packages-list>
+<app-modules-list *ngIf="selectedtoggle === 'Modules'"></app-modules-list>
+<app-service-list *ngIf="selectedtoggle === 'Services'"></app-service-list>
+<app-features-list [afterAddFeature]="afterAddFeature" *ngIf="selectedtoggle === 'Features'"></app-features-list>

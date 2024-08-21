@@ -1,0 +1,857 @@
+{
+  "version": "6.0",
+  "nxVersion": "16.10.0",
+  "deps": {
+    "@angular/animations": "^16.1.0",
+    "@angular/cdk": "^16.2.12",
+    "@angular/common": "^16.1.0",
+    "@angular/compiler": "^16.1.0",
+    "@angular/core": "^16.1.0",
+    "@angular/forms": "^16.1.0",
+    "@angular/material": "^16.2.12",
+    "@angular/platform-browser": "^16.1.0",
+    "@angular/platform-browser-dynamic": "^16.1.0",
+    "@angular/router": "^16.1.0",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.1",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "jspdf-autotable": "^3.7.1",
+    "ngx-export-as": "^1.16.0",
+    "prettier-eslint": "^16.1.2",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.13.0",
+    "@angular-devkit/build-angular": "^16.1.0",
+    "@angular-eslint/builder": "17.0.1",
+    "@angular-eslint/eslint-plugin": "17.0.1",
+    "@angular-eslint/eslint-plugin-template": "17.0.1",
+    "@angular-eslint/schematics": "17.0.1",
+    "@angular-eslint/template-parser": "17.0.1",
+    "@angular/cli": "~16.1.0",
+    "@angular/compiler-cli": "^16.1.0",
+    "@types/jasmine": "~4.3.0",
+    "@typescript-eslint/eslint-plugin": "6.10.0",
+    "@typescript-eslint/parser": "6.10.0",
+    "cypress": "latest",
+    "eslint": "^8.53.0",
+    "husky": "^8.0.3",
+    "jasmine-core": "~4.6.0",
+    "jest": "^29.7.0",
+    "jest-preset-angular": "^13.1.3",
+    "karma-coverage": "~2.2.0",
+    "lint-staged": "^15.0.2",
+    "prettier": "^3.0.3",
+    "schematics-scss-migrate": "^2.3.17",
+    "typescript": "~5.1.3"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "projectFileMap": {},
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "17241496168097493888"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "1088817118686539841"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "4689145951703824387"
+      },
+      {
+        "file": ".gitlab-ci.yml",
+        "hash": "9877190307419870556"
+      },
+      {
+        "file": ".nx/cache/file-map.json",
+        "hash": "14387662986884393773"
+      },
+      {
+        "file": ".nx/cache/lockfile.hash",
+        "hash": "7455473068951564095"
+      },
+      {
+        "file": ".nx/cache/parsed-lock-file.json",
+        "hash": "10564439540132844214"
+      },
+      {
+        "file": ".nx/cache/project-graph.json",
+        "hash": "15921276443445789310"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "2787727912539146730"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "1484587261559708522"
+      },
+      {
+        "file": "Dockerfile",
+        "hash": "10736933269264411999"
+      },
+      {
+        "file": "README.md",
+        "hash": "16651245233404430951"
+      },
+      {
+        "file": "angular.json",
+        "hash": "5810425888503178910"
+      },
+      {
+        "file": "cypress/e2e/spec.cy.ts",
+        "hash": "16242627997193393324"
+      },
+      {
+        "file": "cypress/fixtures/example.json",
+        "hash": "4187707764636006663"
+      },
+      {
+        "file": "cypress/support/commands.ts",
+        "hash": "7580665643526168991"
+      },
+      {
+        "file": "cypress/support/component-index.html",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "cypress/support/component.ts",
+        "hash": "13005475862485463831"
+      },
+      {
+        "file": "cypress/support/e2e.ts",
+        "hash": "1891399876864538420"
+      },
+      {
+        "file": "cypress/tsconfig.json",
+        "hash": "4189024445535263569"
+      },
+      {
+        "file": "cypress.config.ts",
+        "hash": "16765588352749945795"
+      },
+      {
+        "file": "nginx.conf",
+        "hash": "1394474754353034431"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "16304412255339268211"
+      },
+      {
+        "file": "package.json",
+        "hash": "17985558841068131287"
+      },
+      {
+        "file": "src/app/app-routing.module.ts",
+        "hash": "10235569897062640100"
+      },
+      {
+        "file": "src/app/app.component.html",
+        "hash": "10531741017193274831"
+      },
+      {
+        "file": "src/app/app.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/app.component.spec.ts",
+        "hash": "16688383971685082188"
+      },
+      {
+        "file": "src/app/app.component.ts",
+        "hash": "4425056958949586969"
+      },
+      {
+        "file": "src/app/app.module.ts",
+        "hash": "13508638010338865654"
+      },
+      {
+        "file": "src/app/core/models/sideBar.ts",
+        "hash": "10119341201711077225"
+      },
+      {
+        "file": "src/app/core/sidebar/sidebar.component.html",
+        "hash": "6924552610790700874"
+      },
+      {
+        "file": "src/app/core/sidebar/sidebar.component.scss",
+        "hash": "5319677417293169243"
+      },
+      {
+        "file": "src/app/core/sidebar/sidebar.component.spec.ts",
+        "hash": "16750852887743555551"
+      },
+      {
+        "file": "src/app/core/sidebar/sidebar.component.ts",
+        "hash": "15301319353061927909"
+      },
+      {
+        "file": "src/app/layouts/admin-layout/admin-layout.component.html",
+        "hash": "14186565586507660851"
+      },
+      {
+        "file": "src/app/layouts/admin-layout/admin-layout.component.scss",
+        "hash": "15590171953088203986"
+      },
+      {
+        "file": "src/app/layouts/admin-layout/admin-layout.component.spec.ts",
+        "hash": "12948834838643604380"
+      },
+      {
+        "file": "src/app/layouts/admin-layout/admin-layout.component.ts",
+        "hash": "4870310821949810413"
+      },
+      {
+        "file": "src/app/layouts/admin-layout-routing.module.ts",
+        "hash": "10294350456148507860"
+      },
+      {
+        "file": "src/app/layouts/admin-layout.module.ts",
+        "hash": "5617713911680094534"
+      },
+      {
+        "file": "src/app/modules/ged/ged/ged.component.html",
+        "hash": "7978630141487930160"
+      },
+      {
+        "file": "src/app/modules/ged/ged/ged.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/ged/ged/ged.component.spec.ts",
+        "hash": "12472818649591832892"
+      },
+      {
+        "file": "src/app/modules/ged/ged/ged.component.ts",
+        "hash": "13931542636363286602"
+      },
+      {
+        "file": "src/app/modules/ged/ged-routing.module.ts",
+        "hash": "16494882706158762026"
+      },
+      {
+        "file": "src/app/modules/ged/ged.module.ts",
+        "hash": "14630010664060073752"
+      },
+      {
+        "file": "src/app/modules/home/home/home.component.html",
+        "hash": "16619066491338721079"
+      },
+      {
+        "file": "src/app/modules/home/home/home.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/home/home/home.component.spec.ts",
+        "hash": "17251428766814914771"
+      },
+      {
+        "file": "src/app/modules/home/home/home.component.ts",
+        "hash": "9527826086688941569"
+      },
+      {
+        "file": "src/app/modules/home/home-routing.module.ts",
+        "hash": "18055389176721531828"
+      },
+      {
+        "file": "src/app/modules/home/home.module.ts",
+        "hash": "9679109568300339102"
+      },
+      {
+        "file": "src/app/modules/iot-devices/iot-devices/iot-devices.component.html",
+        "hash": "7527926442569877611"
+      },
+      {
+        "file": "src/app/modules/iot-devices/iot-devices/iot-devices.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/iot-devices/iot-devices/iot-devices.component.spec.ts",
+        "hash": "17988197463943159042"
+      },
+      {
+        "file": "src/app/modules/iot-devices/iot-devices/iot-devices.component.ts",
+        "hash": "6627940962931759693"
+      },
+      {
+        "file": "src/app/modules/iot-devices/iot-devices-routing.module.ts",
+        "hash": "9703399879640760238"
+      },
+      {
+        "file": "src/app/modules/iot-devices/iot-devices.module.ts",
+        "hash": "4714879954138791081"
+      },
+      {
+        "file": "src/app/modules/organisations/organisations/organisations.component.html",
+        "hash": "10826919364233796726"
+      },
+      {
+        "file": "src/app/modules/organisations/organisations/organisations.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/organisations/organisations/organisations.component.spec.ts",
+        "hash": "2576472105361735531"
+      },
+      {
+        "file": "src/app/modules/organisations/organisations/organisations.component.ts",
+        "hash": "1793656858630055487"
+      },
+      {
+        "file": "src/app/modules/organisations/organisations-routing.module.ts",
+        "hash": "15490172293097127078"
+      },
+      {
+        "file": "src/app/modules/organisations/organisations.module.ts",
+        "hash": "3242332058069183961"
+      },
+      {
+        "file": "src/app/modules/subscription/subscription/subscription.component.html",
+        "hash": "3818461259257888022"
+      },
+      {
+        "file": "src/app/modules/subscription/subscription/subscription.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/subscription/subscription/subscription.component.spec.ts",
+        "hash": "13749482219883547260"
+      },
+      {
+        "file": "src/app/modules/subscription/subscription/subscription.component.ts",
+        "hash": "5595410008516760505"
+      },
+      {
+        "file": "src/app/modules/subscription/subscription-routing.module.ts",
+        "hash": "9591313900855455567"
+      },
+      {
+        "file": "src/app/modules/subscription/subscription.module.ts",
+        "hash": "3640666122810468556"
+      },
+      {
+        "file": "src/app/modules/users/users/users.component.html",
+        "hash": "17394896884015840120"
+      },
+      {
+        "file": "src/app/modules/users/users/users.component.scss",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/app/modules/users/users/users.component.spec.ts",
+        "hash": "17649410725696681661"
+      },
+      {
+        "file": "src/app/modules/users/users/users.component.ts",
+        "hash": "8442645031334463461"
+      },
+      {
+        "file": "src/app/modules/users/users-routing.module.ts",
+        "hash": "1460257375518440257"
+      },
+      {
+        "file": "src/app/modules/users/users.module.ts",
+        "hash": "16378567256452397527"
+      },
+      {
+        "file": "src/app/services/configuration/config.service.spec.ts",
+        "hash": "423724372556557966"
+      },
+      {
+        "file": "src/app/services/configuration/config.service.ts",
+        "hash": "577355300619151843"
+      },
+      {
+        "file": "src/app/services/organisations/organisations.service.spec.ts",
+        "hash": "14331441597912561771"
+      },
+      {
+        "file": "src/app/services/organisations/organisations.service.ts",
+        "hash": "11044615002330485088"
+      },
+      {
+        "file": "src/app/shared/shared.module.ts",
+        "hash": "11497473662973094477"
+      },
+      {
+        "file": "src/app/shared/table/table.component.html",
+        "hash": "1313647948156350928"
+      },
+      {
+        "file": "src/app/shared/table/table.component.scss",
+        "hash": "11531420821883828322"
+      },
+      {
+        "file": "src/app/shared/table/table.component.spec.ts",
+        "hash": "863891421013654165"
+      },
+      {
+        "file": "src/app/shared/table/table.component.ts",
+        "hash": "5589933639925117112"
+      },
+      {
+        "file": "src/assets/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "src/assets/Ged.png",
+        "hash": "410226352268586829"
+      },
+      {
+        "file": "src/assets/Groupe1.png",
+        "hash": "8624451189766051064"
+      },
+      {
+        "file": "src/assets/Item.svg",
+        "hash": "4507057626221862152"
+      },
+      {
+        "file": "src/assets/Item@2x.svg",
+        "hash": "3323338212299901103"
+      },
+      {
+        "file": "src/assets/Users.png",
+        "hash": "11443310279720851972"
+      },
+      {
+        "file": "src/assets/Users.svg",
+        "hash": "17036225159482123502"
+      },
+      {
+        "file": "src/assets/Vector.png",
+        "hash": "2519045227344538783"
+      },
+      {
+        "file": "src/assets/delete.svg",
+        "hash": "1945731188880632251"
+      },
+      {
+        "file": "src/assets/deletehover.svg",
+        "hash": "6437772086315590782"
+      },
+      {
+        "file": "src/assets/deploiement.svg",
+        "hash": "488265563194699873"
+      },
+      {
+        "file": "src/assets/edit.svg",
+        "hash": "15957870898793057854"
+      },
+      {
+        "file": "src/assets/edithover.svg",
+        "hash": "11117228883549216621"
+      },
+      {
+        "file": "src/assets/environments/config.json",
+        "hash": "14504062520991780896"
+      },
+      {
+        "file": "src/assets/environments/config.template.json",
+        "hash": "15405328762005571565"
+      },
+      {
+        "file": "src/assets/facturation.svg",
+        "hash": "18252855246181653550"
+      },
+      {
+        "file": "src/assets/faviconfrightsure-.svg",
+        "hash": "12369854032398665012"
+      },
+      {
+        "file": "src/assets/favicongah.svg",
+        "hash": "12369854032398665012"
+      },
+      {
+        "file": "src/assets/fonts/ProductSans-Bold.ttf",
+        "hash": "2193733618672169132"
+      },
+      {
+        "file": "src/assets/freightGif.gif",
+        "hash": "16993074728064393533"
+      },
+      {
+        "file": "src/assets/i18n/de.json",
+        "hash": "11802984595936055938"
+      },
+      {
+        "file": "src/assets/i18n/en.json",
+        "hash": "13996248341119032102"
+      },
+      {
+        "file": "src/assets/i18n/fr.json",
+        "hash": "17175392135070849370"
+      },
+      {
+        "file": "src/assets/icon/FileArrowDown.png",
+        "hash": "13684944637627918226"
+      },
+      {
+        "file": "src/assets/icon/ICONLOADING.svg",
+        "hash": "5952303849011303986"
+      },
+      {
+        "file": "src/assets/icon/Synapse.svg",
+        "hash": "11458579366993593987"
+      },
+      {
+        "file": "src/assets/icon/Synapse_logo.png",
+        "hash": "10925389161169476593"
+      },
+      {
+        "file": "src/assets/icon/delete.svg",
+        "hash": "1176934368811526865"
+      },
+      {
+        "file": "src/assets/icon/deploy.png",
+        "hash": "11641958699989110930"
+      },
+      {
+        "file": "src/assets/icon/desactive.png",
+        "hash": "6161599729939433464"
+      },
+      {
+        "file": "src/assets/icon/edit.svg",
+        "hash": "15688545409245903131"
+      },
+      {
+        "file": "src/assets/icon/encours-depoiement.png",
+        "hash": "18156548934171224921"
+      },
+      {
+        "file": "src/assets/icon/erreur.png",
+        "hash": "3605254458324312960"
+      },
+      {
+        "file": "src/assets/icon/eye.svg",
+        "hash": "6415964816521074979"
+      },
+      {
+        "file": "src/assets/icon/favicon.ico",
+        "hash": "10734943602835107602"
+      },
+      {
+        "file": "src/assets/icon/k.webp",
+        "hash": "14099306315862059436"
+      },
+      {
+        "file": "src/assets/icon/logoFrei.png",
+        "hash": "8610264648215514681"
+      },
+      {
+        "file": "src/assets/icon/off.png",
+        "hash": "5892039542062102441"
+      },
+      {
+        "file": "src/assets/icon/on.png",
+        "hash": "16332983891105481516"
+      },
+      {
+        "file": "src/assets/icon/organisation.svg",
+        "hash": "14760738398400092017"
+      },
+      {
+        "file": "src/assets/icon/point.svg",
+        "hash": "14723024914553271835"
+      },
+      {
+        "file": "src/assets/icon/power-off-red.svg",
+        "hash": "11057073061880764645"
+      },
+      {
+        "file": "src/assets/icon/power-off.svg",
+        "hash": "17600877249901141710"
+      },
+      {
+        "file": "src/assets/icon/power-running.svg",
+        "hash": "10284881544223251368"
+      },
+      {
+        "file": "src/assets/icon/pre-deploiement.png",
+        "hash": "14250219553388374552"
+      },
+      {
+        "file": "src/assets/icon/ring.svg",
+        "hash": "13015192026682117048"
+      },
+      {
+        "file": "src/assets/icon/settingg.svg",
+        "hash": "300589202621566087"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/active-arrow.svg",
+        "hash": "15129882477479819995"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/active-build.svg",
+        "hash": "442870083749919114"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/active-deployment.svg",
+        "hash": "12715260733539576606"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/active-friends.svg",
+        "hash": "6033770113929636720"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/active-ged.svg",
+        "hash": "16444195613902316500"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/active-gift.svg",
+        "hash": "17887374784024693056"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/active-heart.svg",
+        "hash": "2142030824121245105"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/active-home.svg",
+        "hash": "8677469643669338243"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/active-iot.svg",
+        "hash": "11695497568304277544"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/active-subscription.svg",
+        "hash": "17496777145840332317"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/active-user.svg",
+        "hash": "10542934001881742741"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/arrow.svg",
+        "hash": "7728230904461624479"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/build.svg",
+        "hash": "9424275300166004039"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/friends.svg",
+        "hash": "17094660647376469711"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/gift.svg",
+        "hash": "16359368671491579711"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/heart.svg",
+        "hash": "13803080349520892277"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/home.svg",
+        "hash": "7435976256326563328"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/hover-build.svg",
+        "hash": "14760738398400092017"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/hover-heart.svg",
+        "hash": "11201460230193164087"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/hover-home.svg",
+        "hash": "9082693038295651721"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/inactive-deployment.svg",
+        "hash": "3544233402778428559"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/inactive-ged.svg",
+        "hash": "13700496798928447424"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/inactive-home.svg",
+        "hash": "1755562305605903530"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/inactive-iot.svg",
+        "hash": "1702594456708730659"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/inactive-subscription.svg",
+        "hash": "11936779358475486518"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/inactive-user.svg",
+        "hash": "3486655341379167408"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/logSyn.svg",
+        "hash": "8971816235977591528"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/logout.svg",
+        "hash": "736696013365778433"
+      },
+      {
+        "file": "src/assets/icon/sidebarIcon/point.svg",
+        "hash": "14723024914553271835"
+      },
+      {
+        "file": "src/assets/icon/toLeft.svg",
+        "hash": "7937947678608986716"
+      },
+      {
+        "file": "src/assets/icon/vert prédeploiment.webp",
+        "hash": "8530272602941864242"
+      },
+      {
+        "file": "src/assets/icones-table/GroupTruck.svg",
+        "hash": "14878493416570447538"
+      },
+      {
+        "file": "src/assets/icones-table/Truck.svg",
+        "hash": "9529646217631303810"
+      },
+      {
+        "file": "src/assets/icones-table/UserCircle.svg",
+        "hash": "10496595839125158100"
+      },
+      {
+        "file": "src/assets/icones-table/Vector.svg",
+        "hash": "10407615017016849756"
+      },
+      {
+        "file": "src/assets/icones-table/action-1.svg",
+        "hash": "17060442658660305462"
+      },
+      {
+        "file": "src/assets/icones-table/action-2.svg",
+        "hash": "8859075700257954647"
+      },
+      {
+        "file": "src/assets/icones-table/delete.svg",
+        "hash": "8451247333264340030"
+      },
+      {
+        "file": "src/assets/icones-table/edit.svg",
+        "hash": "4725426237092118307"
+      },
+      {
+        "file": "src/assets/icones-table/exel.svg",
+        "hash": "3433527938267075301"
+      },
+      {
+        "file": "src/assets/icones-table/pdf.svg",
+        "hash": "6459041690713308699"
+      },
+      {
+        "file": "src/assets/icones-table/search.svg",
+        "hash": "17548896200277357798"
+      },
+      {
+        "file": "src/assets/img/FreightSure.png",
+        "hash": "9462255519600520358"
+      },
+      {
+        "file": "src/assets/img/Item.png",
+        "hash": "4819339045183667621"
+      },
+      {
+        "file": "src/assets/img/bg-login.png",
+        "hash": "9909856035392007533"
+      },
+      {
+        "file": "src/assets/img/logofrightsure.png",
+        "hash": "13804632896926193937"
+      },
+      {
+        "file": "src/assets/iot.svg",
+        "hash": "10705286080295251975"
+      },
+      {
+        "file": "src/assets/licences.svg",
+        "hash": "16728779330164286174"
+      },
+      {
+        "file": "src/assets/loginimg.png",
+        "hash": "17995910477517267578"
+      },
+      {
+        "file": "src/assets/logo-principal.png",
+        "hash": "12530740127683395643"
+      },
+      {
+        "file": "src/assets/logo.svg",
+        "hash": "16803306661462892716"
+      },
+      {
+        "file": "src/assets/logoGif.gif",
+        "hash": "11596304493912485948"
+      },
+      {
+        "file": "src/assets/logout.svg",
+        "hash": "9659506644242032613"
+      },
+      {
+        "file": "src/assets/logouthover.svg",
+        "hash": "10167908617911941755"
+      },
+      {
+        "file": "src/assets/notif.svg",
+        "hash": "17737523056219442743"
+      },
+      {
+        "file": "src/assets/notifHover.svg",
+        "hash": "4329498368806677022"
+      },
+      {
+        "file": "src/assets/signature.svg",
+        "hash": "11581598110146890986"
+      },
+      {
+        "file": "src/assets/signout.png",
+        "hash": "9188638985268611353"
+      },
+      {
+        "file": "src/assets/souscription.svg",
+        "hash": "12755787923934738086"
+      },
+      {
+        "file": "src/favicon.ico",
+        "hash": "3464744996580215640"
+      },
+      {
+        "file": "src/index.html",
+        "hash": "6647338150130858612"
+      },
+      {
+        "file": "src/main.ts",
+        "hash": "10291858862962143981"
+      },
+      {
+        "file": "src/setupJest.ts",
+        "hash": "9531801021999427605"
+      },
+      {
+        "file": "src/styles.scss",
+        "hash": "18023114885020537634"
+      },
+      {
+        "file": "tsconfig.app.json",
+        "hash": "13119632651406065538"
+      },
+      {
+        "file": "tsconfig.json",
+        "hash": "9691666160748506084"
+      },
+      {
+        "file": "tsconfig.spec.json",
+        "hash": "5122839733245053999"
+      }
+    ]
+  }
+}

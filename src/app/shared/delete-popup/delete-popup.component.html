@@ -1,0 +1,17 @@
+<div class="dialog-container">
+   <div><mat-dialog-actions class="position-absolute end-0">
+        <button mat-button mat-dialog-close class="button-close">
+            <img src="assets/icon/sidebarIcon/x.svg" />
+        </button>
+    </mat-dialog-actions>
+</div>
+    <div class="center-content">
+        <h2 class="title">
+          Are you sure you want to  {{ data.module }}?</h2>
+    </div>
+
+    <div class="button-blue d-flex justify-content-center align-items-center">
+        <button mat-raised-button class="button-form-transparent"  (click)="dialogRef.close(false)">Cancel</button>
+        <button mat-raised-button class="button-form-bleu" (click)="dialogRef.close(true)" >Confirm</button>
+    </div>
+</div>

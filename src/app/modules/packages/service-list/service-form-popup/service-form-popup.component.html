@@ -1,0 +1,95 @@
+<div class="system-configuration">
+  <div class="row gap-3">
+      <!-- Package details -->
+        <div class="col bloc">
+      <form [formGroup]="formServices">
+          <div class="section">Service details</div>
+          <div class="row mb-3">
+              <div class="col">
+                <label>Category</label>
+                <mat-form-field class="select-field-list">
+                    <mat-label>Select category</mat-label>
+                    <i class="bi bi-chevron-down"></i>
+                    <mat-select formControlName="categoryId">
+                        <mat-option *ngFor="let category of listCategory" [value]="category.id">{{ category.name }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-error
+                class="error-label"
+                *ngIf="formServices.get('categoryId')?.hasError('required') && submitted"
+                >This field is <strong>required</strong>
+            </mat-error>
+              </div>
+              <div class="col">
+                  <label>Name</label>
+                  <mat-form-field appearance="outline" class="input-modal">
+                      <input matInput placeholder="Name" formControlName="name" />
+                  </mat-form-field>
+                  <mat-error
+                  class="error-label"
+                  *ngIf="formServices.get('name')?.hasError('required') && submitted"
+                  >This field is <strong>required</strong>
+              </mat-error>
+              </div>
+          </div>
+
+          <div class="row mb-3">
+            <div class="col">
+              <label>Code</label>
+              <mat-form-field appearance="outline" class="input-modal">
+                <input matInput placeholder="Code" formControlName="code" />
+            </mat-form-field>
+            <mat-error
+            class="error-label"
+            *ngIf="formServices.get('code')?.hasError('required') && submitted"
+            >This field is <strong>required</strong>
+        </mat-error>
+            </div>
+            <div class="col">
+              <label>Quantity</label>
+              <mat-form-field appearance="outline" class="input-modal">
+                <input matInput placeholder="Quantity" formControlName="quantity" />
+            </mat-form-field>
+            <mat-error
+            class="error-label"
+            *ngIf="formServices.get('quantity')?.hasError('required') && submitted"
+            >This field is <strong>required</strong>
+        </mat-error>
+            </div>
+        </div>
+
+          <div class="row mb-3">
+              <div class="col">
+                  <label>Description</label>
+                  <mat-form-field class="custom-textarea">
+                      <textarea matInput formControlName="description"></textarea>
+
+                  </mat-form-field>
+                  <mat-error
+                  class="error-label"
+                  *ngIf="formServices.get('description')?.hasError('required') && submitted"
+                  >This field is <strong>required</strong>
+              </mat-error>
+              </div>
+          </div>
+        </form>
+
+      </div>
+
+      <!-- Pricing bloc -->
+      <div class="col bloc">
+          <div class="section">Pricing</div>
+          <app-pricing-form [listServicePricings]="listPricing" [readOnly]="readOnly" (pricingAction)="getPricingService($event)"></app-pricing-form>
+          <mat-error
+          class="error-label"
+          *ngIf="pricing.length == 0 && submitted"
+          >This field is <strong>required</strong>
+      </mat-error>
+      </div>
+  </div>
+
+  <div *ngIf="!readOnly" class="button-blue d-flex justify-content-center align-items-center">
+      <button mat-raised-button class="button-form-transparent" (click)="cancel()">Cancel</button>
+      <button mat-raised-button class="button-form-bleu" (click)="actionToCall()" >Save</button>
+  </div>
+</div>

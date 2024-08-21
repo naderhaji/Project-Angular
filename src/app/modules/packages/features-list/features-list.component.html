@@ -1,0 +1,13 @@
+
+<app-table
+    [header]="headers"
+    [allData]="featureList"
+    [actionButtons]="actionButtons"
+    [exportName]="'Services'"
+    (editRow)="editFeature($event)"
+    [totalLength]="totalLength"
+    (deleteRow)="deleteFeature($event)"
+    (paginationAction)="onPageChange($event)"
+    (onSearch)="searchFeature($event)"
+    (setStatus)="setStatusFeature($event)"
+    ></app-table>

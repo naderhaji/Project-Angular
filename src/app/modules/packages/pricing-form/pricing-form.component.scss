@@ -1,0 +1,87 @@
+@import '../../../../assets/style/buttons';
+@import '../../../../assets/style/_table';
+@import '../../../../assets/style/_input';
+
+::ng-deep .container-pricing-form .mat-elevation-z8 {
+    padding: 0% !important;
+}
+::ng-deep .container-pricing-form .mat-mdc-form-field-infix {
+    width: 4rem !important;
+}
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 12.342px;
+    border: 0.726px solid rgba(75, 65, 217, 0.25);
+    margin: 8px;
+    span {
+        background-color: #d8d2f1;
+        color: #4b41d9;
+        font-family: 'Product Sans';
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding: 5px 10px;
+        border-radius: 20px;
+        margin: 5px;
+        white-space: nowrap;
+        img {
+            width: 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+.container-pricing-form {
+    .padding-column {
+        padding: 2% !important;
+    }
+    // .mat-column-amount {
+    //   flex: 0 0 14% !important;
+    //   width: 14% !important;
+    // }
+    // .mat-column-activitySectors {
+    //   flex: 0 0 30% !important;
+    //   width: 30% !important;
+    // }
+
+    // .mat-column-currency {
+    //   flex: 0 0 26% !important;
+    //   width: 26% !important;
+    // }
+
+    // .mat-column-countries {
+    //   flex: 0 0 30% !important;
+    //   width: 30% !important;
+    // }
+}
+.padding-currency {
+    padding-left: 3% !important;
+    padding-right: 1% !important;
+}
+.padding-activity-sector {
+  padding-left: 3% !important;
+  padding-right: 2% !important;
+}
+.column-0 {
+    width: 30%;
+}
+.column-1 {
+    width: 26%;
+}
+.column-2 {
+    width: 30%;
+}
+.column-3 {
+    width: 14%;
+}
+
+.column-4 {
+    width: 16%;
+}
+
+::ng-deep .add-table thead {
+    display: none !important;
+}

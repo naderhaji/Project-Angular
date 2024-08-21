@@ -1,0 +1,6 @@
+<div *ngIf="parentLinkTitle !=='home'" class="d-flex align-items-center gap-1 m-0 breadcrumb">
+  <div class="home"><img src="assets/icon/navbarIcon/home.svg"  alt="home"  /></div>
+  <i class="bi bi-chevron-right"></i>
+  <img src="{{ 'assets/icon/navbarIcon/' + icon + '.svg' }}" alt="navbar" />
+  <span> {{ parentLinkTitle }} </span>
+</div>

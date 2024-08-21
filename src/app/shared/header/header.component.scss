@@ -1,0 +1,23 @@
+.card-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Product Sans', sans-serif;
+    gap: 15px;
+}
+.button-contain {
+    background-color: #f7f5ff;
+    height: 100px;
+    justify-content: space-between;
+    padding-right: 27px;
+    padding-left: 24px;
+    ::ng-deep .mat-mdc-raised-button {
+        background-color: #92c73e;
+        color: white;
+        border-radius: 25px;
+        font-family: 'Product Sans', sans-serif;
+        padding: 22px 30px;
+        font-size: 16px;
+        box-shadow: none;
+    }
+}

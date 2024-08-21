@@ -1,0 +1,22 @@
+<div class="container-subscription">
+<app-header [buttonLabel]="'Add subscription'" 
+            [Cards]="Cards" 
+            (addElement)="addUpdateSubscription($event)"> 
+        </app-header>
+<div class="row mx-0 pt-3 padding-table-subscription">
+    <div class="" [ngClass]="{'col-md-8 pe-0': showOverView, 'col-md-12 ':!showOverView}">       
+<app-table [header]="headers" 
+           [allData]="allData" 
+           [actionButtons]="actionButtons" 
+           [showFiltre]="true" 
+           [listoptionlicensestatus]="listoptionlicensestatus" 
+           [listoptioncountryMapped]="listoptioncountryMapped"
+           (overviewAction)="overviewSubscription()"
+           (editRow)="addUpdateSubscription($event)"
+           (deleteRow)="openDeleteDialog($event)"> 
+        </app-table>
+</div>
+        <app-overview (closeOverView)="closeOverView()" *ngIf="showOverView" class="col-md-4 ">
+        </app-overview>
+        </div>
+    </div>        

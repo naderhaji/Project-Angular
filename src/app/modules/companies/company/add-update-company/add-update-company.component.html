@@ -1,0 +1,172 @@
+<div class="system-configuration">
+    <form [formGroup]="formCompany">
+        <div class="row">
+            <div class="col gap-3 mt-3">
+                <!-- Company bloc -->
+                <div class="col bloc bloc-1">
+                    <div class="section">Company profile</div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label>Company Name</label>
+                            <mat-form-field appearance="outline" class="input-modal">
+                                <input matInput formControlName="name" />
+                            </mat-form-field>
+                            <mat-error
+                                class="error-label"
+                                *ngIf="formCompany.get('name')?.hasError('required') && submitted"
+                                >This field is <strong>required</strong>
+                            </mat-error>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label>Country</label>
+                                    <mat-form-field class="select-field-list">
+                                        <mat-label>Select country</mat-label>
+                                        <i class="bi bi-chevron-down"></i>
+                                        <mat-select formControlName="countryCode">
+                                            <mat-option *ngFor="let countrie of countries" [value]="countrie.name">{{ countrie.name }}</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                    <mat-error
+                                        class="error-label"
+                                        *ngIf="formCompany.get('countryCode')?.hasError('required') && submitted"
+                                        >This field is <strong>required</strong>
+                                    </mat-error>
+                                </div>
+                                <div class="col-6">
+                                    <label>City</label>
+                                    <mat-form-field class="select-field-list">
+                                        <mat-label>Select city</mat-label>
+                                        <i class="bi bi-chevron-down"></i>
+                                        <mat-select formControlName="city">
+                                            <mat-option *ngFor="let city of getCitiesByCountry(formCompany.get('countryCode')?.value)" [value]="city">{{ city }}</mat-option>s
+                                        </mat-select>
+                                    </mat-form-field>
+                                    <mat-error
+                                        class="error-label"
+                                        *ngIf="formCompany.get('city')?.hasError('required') && submitted"
+                                        >This field is <strong>required</strong>
+                                    </mat-error>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label>Adress</label>
+                            <mat-form-field appearance="outline" class="input-modal">
+                                <input matInput placeholder="Centre urbain nord ,tunis" formControlName="street1" />
+                            </mat-form-field>
+                            <mat-error
+                                class="error-label"
+                                *ngIf="formCompany.get('street1')?.hasError('required') && submitted"
+                                >This field is <strong>required</strong>
+                            </mat-error>
+                        </div>
+                        <div class="col">
+                            <label>Phone number</label>
+                            <mat-form-field appearance="outline" class="input-modal">
+                                <input matInput placeholder="+216 9743900" formControlName="phoneNumber" />
+                            </mat-form-field>
+                            <mat-error
+                                class="error-label"
+                                *ngIf="formCompany.get('phoneNumber')?.hasError('required') && submitted"
+                                >This field is <strong>required</strong>
+                            </mat-error>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label>Contact Mail</label>
+                            <mat-form-field appearance="outline" class="input-modal">
+                                <input matInput placeholder="Exemple@gmail.com" formControlName="email" />
+                            </mat-form-field>
+                            <mat-error
+                                class="error-label"
+                                *ngIf="formCompany.get('email')?.hasError('required') && submitted"
+                                >This field is <strong>required</strong>
+                            </mat-error>
+                            <mat-error *ngIf="submitted &&  formCompany.get('email')?.hasError('email')"
+                            >Invalid email form</mat-error
+                        >
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label>VAT Number</label>
+                                    <mat-form-field appearance="outline" class="input-modal">
+                                        <input matInput placeholder="236543224" formControlName="vatNumber" />
+                                    </mat-form-field>
+                                    <mat-error
+                                        class="error-label"
+                                        *ngIf="formCompany.get('vatNumber')?.hasError('required') && submitted"
+                                        >This field is <strong>required</strong>
+                                    </mat-error>
+                                </div>
+                                <div class="col-6">
+                                    <label>Registration Number</label>
+                                    <mat-form-field appearance="outline" class="input-modal">
+                                        <input matInput placeholder="32688765432" formControlName="registrationId" />
+                                    </mat-form-field>
+                                    <mat-error
+                                        class="error-label"
+                                        *ngIf="formCompany.get('registrationId')?.hasError('required') && submitted"
+                                        >This field is <strong>required</strong>
+                                    </mat-error>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col gap-3 mt-3">
+                <!-- Documents bloc -->
+                <div class="col bloc">
+                    <div class="section">Documents</div>
+                    <div class="row gap-3">
+                        <div class="col p-1">
+                            <div class="upload-details">
+                                <img src="assets/icon/download.svg" />
+                                <p>Drag and drop files here</p>
+                                <div class="upload-file">
+                                    <button type="button" mat-raised-button (click)="fileInput.click()">
+                                        Browse files
+                                    </button>
+                                    <input
+                                        hidden
+                                        (change)="onFileSelected($event)"
+                                        #fileInput
+                                        type="file" />
+                                    <span class="file-name">{{ selectedFile?.name }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Activity-bloc -->
+                <div class="col bloc mt-3">
+                    <div class="section">Notes</div>
+                    <div class="row mt-1">
+                        <div class="col">
+                            <mat-form-field class="custom-textarea">
+                                <textarea matInput formControlName="notes"></textarea>
+                            </mat-form-field>
+                            <mat-error
+                                class="error-label"
+                                *ngIf="formCompany.get('notes')?.hasError('required') && submitted"
+                                >This field is <strong>required</strong>
+                            </mat-error>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="button-blue d-flex justify-content-center align-items-center">
+        <button mat-raised-button class="button-form-transparent" routerLink="/admin/list-company">Cancel</button>
+        <button mat-raised-button class="button-form-bleu" (click)="actionToCall()">Save</button>
+    </div>
+</div>

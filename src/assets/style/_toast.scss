@@ -1,0 +1,12 @@
+::ng-deep .swal2-popup.swal2-toast{
+  // background-color:#E5F2D1 !important;
+  background-color:transparent !important;
+  border-radius: 80px;
+  padding: 0 !important;
+}
+::ng-deep .swal2-popup.swal2-toast .swal2-html-container{
+  margin: 0 !important;
+}
+::ng-deep .swal2-container{
+  width: 450px !important;
+}

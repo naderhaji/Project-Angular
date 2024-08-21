@@ -1,0 +1,23 @@
+<div class="container-company">
+    <app-header [Cards]="Cards" [buttonLabel]="'Add company'" (addElement)="addUpdateCompany($event)"> </app-header>
+
+    <div class="row mx-0 pt-3 padding-table-company">
+        <div class="" [ngClass]="{'col-md-8 pe-0': showOverView, 'col-md-12 ':!showOverView}">
+            <app-table
+                [header]="headers"
+                [allData]="companyList"
+                [actionButtons]="actionButtons"
+                [exportName]="'Companies'"
+                (editRow)="addUpdateCompany($event)"
+                (deleteRow)="deleteCompany($event)"
+                (overviewAction)="overviewCompany($event)"
+                [totalLength]="totalLength"
+                (paginationAction)="onPageChange($event)"
+                (onSearch)="searchCompany($event)"
+                >
+            </app-table>
+        </div>
+
+        <app-overview (closeOverView)="closeOverView()" [company]="companyOverview" *ngIf="showOverView" class="col-md-4"> </app-overview>
+    </div>
+</div>

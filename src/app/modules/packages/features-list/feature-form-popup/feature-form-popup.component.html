@@ -1,0 +1,47 @@
+<div class="dialog-container">
+    <div class="header-modal position-relative">
+        <h2 mat-dialog-title>{{data.title}}</h2>
+        <mat-dialog-actions class="position-absolute top-0 end-0">
+            <button mat-button mat-dialog-close class="button-close">
+                <img src="assets/icon/sidebarIcon/x.svg" />
+            </button>
+        </mat-dialog-actions>
+    </div>
+
+    <mat-dialog-content>
+        <form [formGroup]="formFeature">
+            <div class="row mb-4">
+                <div class="col">
+                    <label>Code </label>
+                    <mat-form-field appearance="outline" class="input-modal">
+                        <input matInput formControlName="code" />
+                        <mat-error *ngIf="formFeature.get('code')?.hasError('required') && submitted"
+                            >This field is <strong>required</strong></mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <label>Name </label>
+                    <mat-form-field appearance="outline" class="input-modal">
+                        <input matInput formControlName="name" />
+                        <mat-error *ngIf="submitted && formFeature.get('name')?.hasError('required') "
+                            >This field is <strong>required</strong></mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label>Description</label>
+                    <mat-form-field  class="custom-textarea">
+                        <textarea matInput formControlName="description"></textarea>
+                    </mat-form-field>
+                    <mat-error class="error-label" *ngIf="submitted && formFeature.get('description')?.hasError('required') "
+                    >This field is <strong>required</strong></mat-error>
+                </div>
+            </div>
+        </form>
+    </mat-dialog-content>
+    <div class="button-blue d-flex justify-content-center align-items-center">
+        <button mat-raised-button class="button-form-bleu" (click)="actionToCall()">Save</button>
+    </div>
+</div>

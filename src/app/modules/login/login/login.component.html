@@ -1,0 +1,79 @@
+<div id="main" class="row mx-0">
+    <div class="col-md-7" id="left-side">
+        <div class="text-bloc">
+            <div class="text welcome">Welcome,</div>
+            <img src="assets\img\logo-frightsure-white.png" class="logo" alt="" />
+            <div class="text logistic-text">Your logistics in real time, simplified.</div>
+            <div class="text detail">
+                Simplify, automate and optimize each stage of your freight transport activity.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5" id="right-side">
+        <mat-form-field class="me-4">
+            <mat-select [(value)]="selectedLanguage">
+                <mat-select-trigger>
+                    <img
+                        *ngIf="selectedLanguage === 'Eng (US)'"
+                        src="assets/icon/navbarIcon/eng.svg"
+                        alt="Drapeau anglais"
+                        class="lang-flag" />
+                    <img
+                        *ngIf="selectedLanguage === 'Fr (FR)'"
+                        width="25"
+                        src="assets/icon/navbarIcon/fr-drap.svg"
+                        alt="Drapeau français"
+                        class="lang-flag" />
+                    {{ selectedLanguage }}
+                    <i class="bi bi-chevron-down"></i>
+                </mat-select-trigger>
+                <mat-option value="Eng (US)">
+                    <img src="assets/icon/navbarIcon/eng.svg" alt="Drapeau anglais" class="lang-flag" />
+                    Eng
+                </mat-option>
+                <mat-option value="Fr (FR)">
+                    <img src="assets/icon/navbarIcon/fr-drap.svg" width="25" alt="Drapeau français" class="lang-flag" />
+                    Fr
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div class="bloc-login">
+            <div class="login-text login-hello">Hello !</div>
+            <div class="login-text login-detail-text">Please enter your credentials</div>
+            <!-- <div class="input-bloc"> -->
+            <label for="email" class="input-label">Email Address</label>
+            <mat-form-field appearance="outline" class="input-modal">
+                <input matInput formControlName="EmailAddress" placeholder="Email Address" />
+                <!-- <mat-error *ngIf="submitted &&  userForm.get('EmailAddress')?.hasError('required')">Email is <strong>required</strong></mat-error> -->
+            </mat-form-field>
+            <label for="pwd" class="input-label">Password</label>
+            <mat-form-field>
+                <input
+                    matInput
+                    formControlName="password"
+                    [type]="hide1 ? 'password' : 'text'"
+                    placeholder="Password" />
+                <!-- <mat-error *ngIf="submitted &&  userForm.get('password')?.hasError('required')">Password is <strong>required</strong></mat-error> -->
+                <button
+                    mat-icon-button
+                    matSuffix
+                    (click)="togglePasswordVisibility()"
+                    [attr.aria-label]="'hide password'"
+                    [attr.aria-pressed]="hide1">
+                    <mat-icon>{{ hide1 ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+            </mat-form-field>
+            <!-- </div> -->
+            <div class="remember-me">
+                <label class="checkbox-container"
+                    >Remember Me
+                    <input type="checkbox" value="value" />
+                    <span class="checkmark"></span>
+                </label>
+                <div class="forget-pwd">Forget password?</div>
+            </div>
+            <button class="sign-in" [routerLink]="'/admin/list-organisation'">Sign In</button>
+        </div>
+        <div class="privacy">Privacy Policy <span class="dot">.</span> Terms & Conditions</div>
+    </div>
+</div>

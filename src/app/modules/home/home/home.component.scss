@@ -1,0 +1,163 @@
+%card {
+    border-radius: 20px;
+    padding: 20px;
+  }
+  %card-span {
+    border-radius: 100%;
+    padding: 8px;
+    display: flex;
+    height: 50px;
+    width: 50px;
+  }
+  %card_label {
+    color: #151d48;
+    display: block;
+    display: block;
+    font-family: "Product Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    margin: 10px 0 5px;
+  }
+  %card-h3 {
+    color: #425166;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 10px;
+  }
+  %card-p {
+    color: #4079ed;
+    font-family: "Product Sans";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0;
+  }
+  
+  .home-gah {
+    background-color: #f7f5ff;
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 20px;
+    font-family: " Product Sans ";
+  
+    .updates {
+      background-color: white;
+      border-radius: 25px;
+      padding: 25px;
+      margin-bottom: 20px;
+      h2 {
+        color: #05004e;
+        font-family: "Product Sans";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+      }
+      p {
+        color: #737791;
+        font-family: "Product Sans";
+        font-size: 19px;
+        font-style: normal;
+        font-weight: 500;
+      }
+   
+    .contain-card {
+      margin: 30px 0 15px;
+      label {
+        display: block;
+      }
+      .card-total {
+        background-color: #ffe2e5;
+        @extend %card;
+        span {
+          background-color: #fa5a7d;
+          @extend %card-span;
+        }
+        label {
+          @extend %card_label;
+        }
+        h3 {
+          @extend %card-h3;
+        }
+        p {
+          @extend %card-p;
+        }
+      }
+      .card-active {
+        background-color: #fff4de;
+        @extend %card;
+        span {
+          background-color: #ff947a;
+          @extend %card-span;
+        }
+        label {
+          @extend %card_label;
+        }
+        h3 {
+          @extend %card-h3;
+        }
+        p {
+          @extend %card-p;
+        }
+      }
+      .card-expired {
+        background-color: #dcfce7;
+        @extend %card;
+        span {
+          background-color: #3cd856;
+          @extend %card-span;
+        }
+        label {
+          @extend %card_label;
+        }
+        h3 {
+          @extend %card-h3;
+        }
+        p {
+          @extend %card-p;
+        }
+      }
+      .card-assigned {
+        background-color: #f3e8ff;
+        @extend %card;
+        span {
+          background-color: #bf83ff;
+          @extend %card-span;
+        }
+        label {
+          @extend %card_label;
+        }
+        h3 {
+          @extend %card-h3;
+        }
+        p {
+          @extend %card-p;
+        }
+      }
+    }
+  }
+  
+  .card-stat{
+      width: 100%;
+      .item{
+      background-color: white;
+      border-radius: 20px;
+      padding: 20px;
+      width: 100%;
+      h3{
+          color: #05004E;
+          font-family: 'Product Sans';
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 32px; 
+      }
+     } 
+  }
+  
+  
+  }

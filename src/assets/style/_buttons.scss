@@ -1,0 +1,112 @@
+.button-blue {
+    padding: 15px 0;
+    .button-form-transparent {
+        height: 45px;
+        padding: 0 25px;
+        border-radius: 25px;
+        background-color: white;
+        color: #4b41d9;
+        border: 1px solid #4b41d9;
+        font-family: 'Product Sans', sans-serif;
+        margin: 2px;
+    }
+    .button-form-bleu {
+        height: 45px;
+        padding: 0 25px;
+        border-radius: 25px;
+        background-color: #4b41d9;
+        color: white;
+        border: 1px solid #4b41d9;
+        font-family: 'Product Sans', sans-serif;
+        margin: 2px;
+    }
+    ::ng-deep .mat-mdc-button-persistent-ripple::before {
+        background-color: #4b41d9;
+    }
+}
+.button-form-transparent {
+    height: 45px;
+    padding: 0 25px;
+    border-radius: 25px;
+    background-color: white;
+    color: #4b41d9;
+    border: 1px solid #4b41d9;
+    font-family: 'Product Sans', sans-serif;
+    margin: 2px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.button-form-bleu {
+    height: 45px;
+    padding: 0 25px;
+    border-radius: 25px;
+    background-color: #4b41d9;
+    color: white;
+    border: 1px solid #4b41d9;
+    font-family: 'Product Sans', sans-serif;
+    margin: 2px;
+}
+::ng-deep
+    .mat-mdc-radio-button
+    .mdc-radio
+    .mdc-radio__native-control:enabled:checked
+    + .mdc-radio__background
+    .mdc-radio__outer-circle {
+    border-color: #4b41d9 !important;
+}
+::ng-deep
+    .mat-mdc-radio-button
+    .mdc-radio
+    .mdc-radio__native-control:enabled
+    + .mdc-radio__background
+    .mdc-radio__inner-circle {
+    border-color: #4b41d9 !important;
+}
+::ng-deep .mat-mdc-icon-button svg {
+    color: #4b41d9;
+}
+.box-group {
+    border: 1px solid #4b41d9;
+    background-color: white;
+    padding: 10px;
+    border-radius: 30px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    //   custom toogle button
+    ::ng-deep {
+        .custom-button-toggle .mat-button-toggle-appearance-standard {
+            color: #4b41d9;
+            background-color: transparent;
+            border: none;
+            border-radius: 25px;
+            margin: 0 5px;
+        }
+        .custom-button-toggle .mat-button-toggle-checked {
+            color: white;
+            background-color: #4b41d9;
+            border: 1px solid #4b41d9;
+        }
+        .mat-button-toggle-group {
+            height: 45px;
+            font-family: 'Product Sans', sans-serif;
+            line-height: normal;
+        }
+        .mat-button-toggle-group-appearance-standard {
+            border: none;
+        }
+        .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+            padding: 0 20px;
+            line-height: 45px;
+            font-size: 16px;
+        }
+        .mat-button-toggle-focus-overlay {
+            display: none;
+        }
+        .mat-button-toggle-ripple {
+            display: none;
+        }
+    }
+}

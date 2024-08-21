@@ -1,0 +1,96 @@
+@import '../../../../../../../assets/style/buttons';
+
+.container-options{
+  .title-option {
+    color: #4B41D9;
+    font-family: "Product Sans";
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card-option {
+    border-radius: 15.034px;
+    border: 1px solid var(--Primary-Color-1, #4A3AFF);
+    background: var(--color-white-white, #FFF);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 5px;
+}
+.list-card {
+  display: flex;
+  width: 100%;
+  margin-top: 2%;
+}
+.title-card-option {
+  color: #4B41D9;
+  font-family: "Product Sans";
+  font-size: 19.544px;
+  font-weight: 700;
+}
+.pack-selected {
+  border-radius: 24px;
+  background: #4B41D9;
+  padding: 30px;
+  color: white !important;
+  span{
+    color:#FFF;
+  }
+}
+.title-pack-selected {
+  color: var(--color-white-white, #FFF);
+  /* text-align: center; */
+  font-family: "Product Sans";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.26px;
+}
+
+.sub-title-pack-selected {
+  color: #FFF;
+  font-family: "Product Sans";
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.desc-pack-selected {
+  color: #FFF;
+  font-family: "DM Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+}
+.details {
+  color: #FFF;
+  font-family: "Product Sans";
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.module-selected {
+  color: #FFF;
+  font-family: "Product Sans";
+  font-size: 18px;
+  font-weight: 400;
+}
+.l-h{
+  height: 1px;
+  background-color: white;
+}
+.total{
+  color: #FFF;
+  font-family: "Product Sans";
+  font-size: 20px;
+  font-weight: 700;
+}
+.big-price{
+  color:  #FFF;
+font-family: "Product Sans";
+font-size: 54px;
+font-weight: 700;
+line-height: 66px; /* 122.222% */
+}
+}

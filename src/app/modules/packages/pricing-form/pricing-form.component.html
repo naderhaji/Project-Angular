@@ -1,0 +1,174 @@
+<div class="container-pricing-form">
+    <div class="d-flex justify-content-between button-blue">
+        <button mat-raised-button class="button-form-bleu" *ngIf="!readOnly" (click)="addPackage()">+ Add New Row</button>
+        <mat-form-field appearance="outline" class="w-40">
+            <span>
+                <img src="assets/icones-table/search.svg" alt />
+            </span>
+            <input matInput placeholder="Search" />
+        </mat-form-field>
+    </div>
+    <div class="table-container">
+        <div class="mat-elevation-z8">
+            <table #table mat-table matSort [dataSource]="dataSource">
+                <ng-container *ngFor="let disCol of displayedColumns ; let i = index" matColumnDef="{{disCol}}">
+                    <th class="column-{{i}}" mat-header-cell mat-sort-header *matHeaderCellDef>{{header[disCol]}}</th>
+                    <td
+                        class="column-{{i}} p-0 text-center"
+                        [ngClass]="{'padding-column': sameObject(element,listServicePricings[indexToUpdate])}"
+                        mat-cell
+                        *matCellDef="let element ">
+                        <!-- View Rows -->
+                        <div *ngIf="!sameObject(element,listServicePricings[indexToUpdate])">
+                            <span *ngIf="disCol !='countriesCodes' && disCol !='sectors' "> {{element[disCol]}} </span>
+                            <div *ngIf="disCol =='countriesCodes'" class="chips">
+                                <span *ngFor="let countrie of element.countriesCodes"> {{ countrie }} </span>
+                            </div>
+                            <div *ngIf="disCol =='sectors' " class="chips">
+                                <span *ngFor="let sector of element.sectors"> {{ sector.name }} </span>
+                            </div>
+                        </div>
+                        <!-- Update Rows -->
+                        <div *ngIf="sameObject(element,listServicePricings[indexToUpdate])" [formGroup]="formPricing">
+                            <mat-form-field *ngIf=" disCol=='countriesCodes'" class="select-field-list">
+                                <i class="bi bi-chevron-down"></i>
+                                <mat-select formControlName="countriesCodes" multiple>
+                                    <mat-option *ngFor="let countrie of countries" [value]="countrie.name">
+                                        {{ countrie.name }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field *ngIf=" disCol=='currencyCode'" class="select-field-list">
+                                <i class="bi bi-chevron-down"></i>
+                                <mat-select formControlName="currencyCode">
+                                    <mat-option *ngFor="let currency of currencyList" [value]="currency.name"
+                                        >{{ currency.name }}</mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field *ngIf=" disCol=='sectors'" class="select-field-list">
+                                <i class="bi bi-chevron-down"></i>
+                                <mat-select formControlName="sectors" multiple>
+                                    <mat-option *ngFor="let sector of listSector" [value]="sector"
+                                        >{{ sector.name }}   </mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field *ngIf=" disCol=='pricePerMonth'" appearance="outline" class="input-modal">
+                                <input matInput placeholder="500" formControlName="pricePerMonth" />
+                            </mat-form-field>
+                        </div>
+                    </td>
+                </ng-container>
+                <ng-container *ngIf="!readOnly" matColumnDef="actions">
+                    <th class="column-4" mat-header-cell *matHeaderCellDef>Actions</th>
+                    <td class="column-4 text-center" mat-cell *matCellDef="let element ; let j = index ">
+                        <span
+                            *ngIf="!sameObject(element,listServicePricings[indexToUpdate])"
+                            class="action-button d-flex">
+                            <span (click)="updatePricing(j,element)">
+                                <img src="assets/icones-table/edit.svg" role="button" alt="edit"
+                            /></span>
+                            <span (click)="deletePrice(j)"> <img src="assets/icones-table/delete.svg" alt="delete" /></span>
+                        </span>
+                        <span
+                            *ngIf="sameObject(element,listServicePricings[indexToUpdate])"
+                            class="action-button d-flex">
+                            <span (click)="confirmUpdate(j , element)">
+                                <img src="assets/icones-table/CheckCircle.svg" alt="CheckCircle" class="img" />
+                            </span>
+                            <span (click)="indexToUpdate = -1">
+                                <img src="assets/icones-table/CloseCircle.svg" alt="CloseCircle" class="img" />
+                            </span>
+                        </span>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="empty-row">
+                    <mat-cell *matCellDef="let element">No Data</mat-cell>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="allColums"></tr>
+                <tr mat-row *matRowDef="let row; columns: allColums"></tr>
+            </table>
+
+            <!-- Add new Row -->
+
+            <table #table class="add-table" *ngIf="addRowPricing" mat-table matSort [dataSource]="dataSourceAddPrice">
+                <ng-container *ngFor="let disCol of displayedColumns ; let i = index" matColumnDef="{{disCol}}">
+                    <th class="d-none" mat-header-cell mat-sort-header *matHeaderCellDef>{{header[disCol]}}</th>
+                    <td class="column-{{i}}  text-center p-0 padding-column" mat-cell *matCellDef="let element ">
+                        <div [formGroup]="formPricing">
+                            <mat-form-field *ngIf="disCol=='countriesCodes'" class="select-field-list">
+                                <i class="bi bi-chevron-down"></i>
+                                <mat-select formControlName="countriesCodes" multiple>
+                                    <mat-option *ngFor="let countrie of countries" [value]="countrie.name"
+                                        >{{ countrie.name }}</mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-error
+                                class="error-label"
+                                *ngIf="i === 0 && formPricing.get('countriesCodes')?.hasError('required') && submitted"
+                                >This field is <strong>required</strong>
+                            </mat-error>
+                            <mat-form-field *ngIf="disCol=='currencyCode'" class="select-field-list">
+                                <i class="bi bi-chevron-down"></i>
+                                <mat-select formControlName="currencyCode">
+                                    <mat-option *ngFor="let currency of currencyList" [value]="currency.name"
+                                        >{{ currency.name }}</mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-error
+                                class="error-label"
+                                *ngIf="i === 1 && formPricing.get('currencyCode')?.hasError('required') && submitted"
+                                >This field is <strong>required</strong>
+                            </mat-error>
+                            <mat-form-field *ngIf="disCol=='sectors'" class="select-field-list">
+                                <i class="bi bi-chevron-down"></i>
+                                <mat-select formControlName="sectors" multiple>
+                                    <mat-option *ngFor="let sector of listSector" [value]="sector"
+                                        >{{ sector.name }}</mat-option
+                                    >
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-error
+                                class="error-label"
+                                *ngIf="i === 2 &&formPricing.get('sectors')?.hasError('required') && submitted"
+                                >This field is <strong>required</strong>
+                            </mat-error>
+                            <mat-form-field *ngIf="disCol=='pricePerMonth'" appearance="outline" class="input-modal">
+                                <input matInput placeholder="500" formControlName="pricePerMonth" />
+                            </mat-form-field>
+                            <mat-error
+                                class="error-label"
+                                *ngIf="i === 3 && formPricing.get('pricePerMonth')?.hasError('required') && submitted"
+                                >This field is <strong>required</strong>
+                            </mat-error>
+                        </div>
+                    </td>
+                </ng-container>
+                <ng-container *ngIf="!readOnly" matColumnDef="actions">
+                    <th class="d-none" mat-header-cell *matHeaderCellDef>Actions</th>
+                    <td class="column-4 text-center" mat-cell *matCellDef="let element">
+                        <span class="action-button d-flex">
+                            <span (click)="confirmAdd()">
+                                <img src="assets/icones-table/CheckCircle.svg" alt="CheckCircle" class="img" />
+                            </span>
+                            <span>
+                                <img
+                                    src="assets/icones-table/CloseCircle.svg"
+                                    (click)="addRowPricing = false"
+                                    alt="CloseCircle"
+                                    class="img" />
+                            </span>
+                        </span>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="allColums"></tr>
+                <tr mat-row *matRowDef="let row; columns: allColums;"></tr>
+            </table>
+        </div>
+    </div>
+</div>

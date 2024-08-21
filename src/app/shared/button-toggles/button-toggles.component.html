@@ -1,0 +1,14 @@
+<div class="button-contain d-flex justify-content-center align-items-center pe-2">
+    <div class="box-group">
+        <mat-button-toggle-group
+            #group="matButtonToggleGroup" [value]="selectedtoggle"
+            name="fontStyle"
+            aria-label="Font Style"
+            class="custom-button-toggle"
+            >
+            <mat-button-toggle *ngFor="let button of toggleList" [value]="button.name" (click)="changeToggles(button.name)">
+                {{button.name}}</mat-button-toggle
+            >
+        </mat-button-toggle-group>
+    </div>
+</div>

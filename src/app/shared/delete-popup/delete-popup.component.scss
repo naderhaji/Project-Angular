@@ -1,0 +1,139 @@
+.dialog-container {
+    padding: 20px;
+    width: 900px;
+  
+    .input-modal {
+      width: 290px;
+    }
+    h2 {
+      color: #4b41d9;
+      font-family: "Product Sans";
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-align: center;
+      margin: 30px 0;
+    }
+    label {
+      color: #4b41d9;
+      font-family: "Product Sans";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin: 5px;
+      width: fit-content;
+      display: block;
+    }
+    .form-input-select{
+      width: 135px;
+      i{
+        position: absolute;
+        right: 0;
+        top: 8px;
+        color: #4b41d9;
+      }
+    }
+  
+  }
+
+  .center-content {
+    text-align: center;
+    margin-bottom: 20px; /* Adjust the margin as needed */
+} 
+  ::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+    width: fit-content;
+    border-radius: 30px;
+  }
+  ::ng-deep .mat-icon{
+    color: #4b41d9;
+  }
+  
+  //style input
+  ::ng-deep .dialog-container .mat-mdc-form-field {
+    width: 290px;
+    height: 40px;
+  }
+  ::ng-deep .dialog-container .mat-mdc-text-field-wrapper {
+    height: 40px;
+  }
+  ::ng-deep
+    .dialog-container
+    .mat-mdc-form-field:not(.mat-form-field-no-animations)
+    .mdc-text-field__input {
+    margin-top: 0px;
+    height: 40px !important;
+  }
+  ::ng-deep .dialog-container .mdc-notched-outline {
+    border: 1px solid #4b41d9;
+    border-radius: 25px;
+  }
+  
+  ::ng-deep .dialog-container .mdc-notched-outline__leading {
+    display: none;
+  }
+  
+  ::ng-deep .dialog-container .mdc-notched-outline__trailing {
+    display: none;
+  }
+  ::ng-deep
+    .dialog-container
+    .mat-mdc-text-field-wrapper.mdc-text-field--outlined
+    .mat-mdc-form-field-infix {
+    padding-top: 0;
+    padding-bottom: 0;
+    min-height: 40px;
+  }
+  ::ng-deep .dialog-container .mat-mdc-text-field-wrapper .mat-mdc-form-field-infix .mat-mdc-floating-label{
+    top: 100px !important;
+  }
+
+
+  ::ng-deep .cdk-overlay-pane {
+  
+    overflow: hidden;
+    border-radius: 20px !important;
+    width: fit-content !important;
+    //height: 150px;
+    //width: 208px;
+  }
+  ::ng-deep .cdk-overlay-pane:not(.mat-mdc-select-panel-above) div.mat-mdc-select-panel{
+    margin: 0;
+    //height: 150px;
+    //width: 208px;
+  }
+  
+    ////button close
+    ::ng-deep .mat-mdc-button .mdc-button__ripple{
+      display: none;
+    }
+    ///button bleu
+    .button-blue{
+      padding: 15px 0;
+      .button-form-bleu{
+        height: 45px;
+        padding: 0 25px;
+        border-radius: 25px;
+        background-color: #4b41d9;
+         color: white;
+         border: 1px solid #4B41D9;
+         font-family: "Product Sans", sans-serif;
+         margin: 10px;
+      }
+      .button-form-transparent{
+          height: 45px;
+          padding: 0 25px;
+          border-radius: 25px;
+          background-color: white;
+           color: #4b41d9;
+           border: 1px solid #4B41D9;
+           font-family: "Product Sans", sans-serif;
+           margin: 10px;
+        }
+       ::ng-deep .mat-mdc-button-persistent-ripple::before{
+           background-color: #4B41D9;
+        }
+    
+    
+    }

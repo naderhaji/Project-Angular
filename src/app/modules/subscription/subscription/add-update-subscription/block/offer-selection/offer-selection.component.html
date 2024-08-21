@@ -1,0 +1,33 @@
+<div class="container-table-fr">
+    <div class="table-row header-row">
+        <div class="bg-transparent table-checkbox"></div>
+        <div
+            class="table-cell top-border"
+            *ngFor="let item of header ; let i = index"
+            [ngClass]="{'first-cell': i==0 , 'top-right-cell right-border' : i==3 ,'selected-item': i == ySelected }">
+            {{ item }}
+        </div>
+    </div>
+    <div *ngFor="let row of tableData ; let i = index" class="table-row">
+        <div
+            class="table-cell table-checkbox"
+            [ngClass]="{'bg-transparent border-0':i==4, 'first-cell top-border': i==0 , 'bottom-left-cell': i==3}">
+            <input [ngClass]="{'d-none': i==4}" type="checkbox" />
+        </div>
+        <div
+            class="table-cell body-row-fr"
+            *ngFor="let item of rowsContent ; let j = index "
+            [ngClass]="{'right-border' : j== 3 ,
+            'bg-transparent border-0' : j== 0 &&  i==4 ,
+            'bottom-left-cell': j== 1 &&  i==4,
+            'bottom-right-cell': j== 3 &&  i==4,
+            'selected-item': j == ySelected
+          }">
+            <div class="text-center" *ngIf="i!=4">{{ row[item] }}</div>
+            <div *ngIf="i==4 && j!=0" class="d-flex align-items-baseline">
+               <span class="price">${{ row[item] }}</span>  <span class="monthly">/ Monthly</span>
+                <button mat-raised-button class="button-form-transparent" (click)="select(i,j)">Select</button>
+            </div>
+        </div>
+    </div>
+</div>

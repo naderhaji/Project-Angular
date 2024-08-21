@@ -1,0 +1,65 @@
+<div class="container-company-details">
+    <div class="row mx-0">
+        <div class="col-md-4">
+            <!-- Company name -->
+            <label>Company Name</label>
+            <mat-form-field class="select-field-list">
+                <mat-label>Select Company</mat-label>
+                <i class="bi bi-chevron-down"></i>
+                <mat-select>
+                    <mat-option *ngFor="let company of listCompany" [value]="company">{{ company }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!-- Transport Mode -->
+            <label class="mt-4">Transport Mode</label>
+            <mat-form-field class="select-field-list">
+                <mat-label>Select transport mode</mat-label>
+                <i class="bi bi-chevron-down"></i>
+                <mat-select>
+                    <mat-option *ngFor="let company of listCompany" [value]="company">{{ company }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!-- Activity Sector -->
+            <label class="mt-4">Activity Sector</label>
+            <mat-form-field class="select-field-list">
+                <mat-label>Select transport mode</mat-label>
+                <i class="bi bi-chevron-down"></i>
+                <mat-select>
+                    <mat-option *ngFor="let company of listCompany" [value]="company">{{ company }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <!-- Company Email -->
+            <label>Company Email</label>
+            <mat-form-field appearance="outline" class="input-modal">
+                <input matInput  placeholder="Email" />
+            </mat-form-field>
+            <!-- Transportation  Flow -->
+            <label class="mt-4">Transportation  Flow</label>
+            <mat-form-field class="select-field-list">
+                <mat-label>Select Transportation  Flow</mat-label>
+                <i class="bi bi-chevron-down"></i>
+                <mat-select>
+                    <mat-option *ngFor="let company of listCompany" [value]="company">{{ company }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <!-- Company phone -->
+            <label>Company phone</label>
+            <mat-form-field appearance="outline" class="input-modal">
+                <input matInput  placeholder="44567765432" />
+            </mat-form-field>
+            <!-- Company name -->
+            <label class="mt-4">Packaging Type</label>
+            <mat-form-field class="select-field-list">
+                <mat-label>Select Packaging Type</mat-label>
+                <i class="bi bi-chevron-down"></i>
+                <mat-select>
+                    <mat-option *ngFor="let company of listCompany" [value]="company">{{ company }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</div>

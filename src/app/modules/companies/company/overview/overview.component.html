@@ -1,0 +1,111 @@
+<div class="overview-company">
+  <div class="overview-header">
+    <h2>
+      <img src="assets/icon/search-overview.svg" />
+      Overview
+    </h2>
+    <span (click)="close()">
+      <img src="assets/icon/x.svg" role="button" />
+    </span>
+  </div>
+
+  <div class="overview-body">
+ <!-- Company profile -->
+ <div class="overview-details">
+  <div class="overview-details-title">Company profile</div>
+  <ul class="p-0">
+    <li>
+      <div class="left-details">Company name</div>
+      <div class="right-details">{{ company.name }}</div>
+    </li>
+    <li>
+      <div class="left-details">Country</div>
+      <div class="right-details">{{ company.countryCode }}</div>
+    </li>
+    <li>
+      <div class="left-details">City</div>
+      <div class="right-details">{{ company.city }}</div>
+    </li>
+    <li>
+      <div class="left-details">Adress</div>
+      <div class="right-details">{{ company.street1 }}</div>
+    </li>
+    <li>
+      <div class="left-details">Phone number</div>
+      <div class="right-details">{{ company.phoneNumber }}</div>
+    </li>
+    <li>
+      <div class="left-details">Contact mail</div>
+      <div class="right-details">{{ company.email }}</div>
+    </li>
+    <li>
+      <div class="left-details">VAT number</div>
+      <div class="right-details">{{ company.vatNumber }}</div>
+    </li>
+    <li>
+      <div class="left-details">Registration number</div>
+      <div class="right-details">{{ company.registrationId }}</div>
+    </li>
+  </ul>
+</div>
+<!-- Activity details -->
+<!-- <div class="overview-details">
+  <div class="overview-details-title">Activity details</div>
+  <ul class="p-0">
+    <li>
+      <div class="left-details">Sector</div>
+      <div class="right-details">Name of sector</div>
+    </li>
+    <li>
+      <div class="left-details">Sub-sector</div>
+      <div class="right-details">Name of Sub-sector</div>
+    </li>
+    <li>
+      <div class="left-details">Packaginging</div>
+      <div class="right-details">Packaginging</div>
+    </li>
+    <li>
+      <div class="left-details">Nature of goods</div>
+      <div class="right-details">nature</div>
+    </li>
+    <li>
+      <div class="left-details">Transport mode</div>
+      <div class="right-details">transport mode</div>
+    </li>
+    <li>
+      <div class="left-details">Preferred language</div>
+      <div class="right-details">English</div>
+    </li>
+  </ul>
+</div> -->
+<!-- Note -->
+<div class="overview-details">
+  <div class="overview-details-title">Note</div>
+  <div class="overview-details-note">
+    {{ company.notes }}
+  </div>
+</div>
+<!-- Documents -->
+<div class="overview-details">
+  <div class="overview-details-title">Documents</div>
+  <div class="overview-details-Documents d-flex align-items-center">
+    <span class="m-1"><img src="assets/icon/filetype-pdf.svg" /></span>
+    <span class="file-name">File name 1</span>
+  </div>
+  <div class="overview-details-Documents d-flex align-items-center">
+    <span class="m-1"><img src="assets/icon/filetype-pdf.svg" /></span>
+    <span class="file-name">File name 1</span>
+  </div>
+  <div class="overview-details-Documents d-flex align-items-center">
+    <span class="m-1"><img src="assets/icon/filetype-pdf.svg" /></span>
+    <span class="file-name">File name 1</span>
+  </div>
+  <div class="overview-details-Documents d-flex align-items-center">
+    <span class="m-1"><img src="assets/icon/filetype-pdf.svg" /></span>
+    <span class="file-name">File name 1</span>
+  </div>
+</div>
+  </div>
+
+</div>
+

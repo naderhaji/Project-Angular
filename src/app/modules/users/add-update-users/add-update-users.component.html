@@ -1,0 +1,148 @@
+<div class="dialog-container">
+    <div class="header-modal position-relative">
+        <h2 mat-dialog-title>{{ data?.isEdit ? 'Edit user' : 'Add new user' }}</h2>
+
+        <mat-dialog-actions class="position-absolute top-0 end-0">
+            <button mat-button mat-dialog-close class="button-close">
+                <img src="assets/icon/sidebarIcon/x.svg" />
+            </button>
+        </mat-dialog-actions>
+    </div>
+
+    <mat-dialog-content>
+        <form [formGroup]="userForm">
+            <div class="row mb-4">
+                <div class="col">
+                    <label>Company</label>
+                    <mat-form-field class="form-input-select">
+                        <i class="bi bi-chevron-down"></i>
+                        <mat-label>Company</mat-label>
+                        <mat-error *ngIf="submitted &&  userForm.get('companyId')?.hasError('required')"
+                            >Company is <strong>required</strong></mat-error
+                        >
+                        <mat-select formControlName="companyId">
+                            <mat-option *ngFor="let company of companys" [value]="company.id"
+                                >{{ company.name }}</mat-option
+                            >
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <label>First name</label>
+                    <mat-form-field appearance="outline" class="input-modal">
+                        <input matInput formControlName="firstName" placeholder="User Name" />
+                        <mat-error *ngIf="submitted &&  userForm.get('firstName')?.hasError('required')"
+                            >User Name is <strong>required</strong></mat-error
+                        >
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col">
+                    <label>Email</label>
+                    <mat-form-field appearance="outline" class="input-modal">
+                        <input matInput formControlName="email" placeholder="Email" />
+                        <mat-error *ngIf="submitted &&  userForm.get('email')?.hasError('required')"
+                            >Email is <strong>required</strong></mat-error
+                        >
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <label>Last name</label>
+                    <mat-form-field appearance="outline" class="input-modal">
+                        <input matInput formControlName="lastName" placeholder="Last name" />
+
+                        <mat-error *ngIf="submitted &&  userForm.get('lastName')?.hasError('lastName')"
+                            >Last name is <strong>required</strong></mat-error
+                        >
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col">
+                    <label>Password</label>
+                    <mat-form-field>
+                        <input
+                            matInput
+                            formControlName="password"
+                            [type]="hide1 ? 'password' : 'text'"
+                            placeholder="Password" />
+                        <mat-error *ngIf="submitted &&  userForm.get('password')?.hasError('required')"
+                            >Password is <strong>required</strong></mat-error
+                        >
+                        <button
+                            mat-icon-button
+                            matSuffix
+                            (click)="togglePasswordVisibility()"
+                            [attr.aria-label]="'hide password'"
+                            [attr.aria-pressed]="hide1">
+                            <mat-icon>{{ hide1 ? 'visibility_off' : 'visibility' }}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+
+                <div class="col">
+                    <label>Repeat Password</label>
+                    <mat-form-field>
+                        <input
+                            matInput
+                            formControlName="repeatpassword"
+                            [type]="hide2 ? 'password' : 'text'"
+                            placeholder="Password" />
+                        <mat-error *ngIf="submitted &&  userForm.get('repeatpassword')?.hasError('required')"
+                            >Repeat Password is <strong>required</strong></mat-error
+                        >
+                        <button mat-icon-button matSuffix (click)="toggleRepeatPasswordVisibility()">
+                            <mat-icon>{{ hide2 ? 'visibility_off' : 'visibility' }}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col">
+                    <label>Role</label>
+                    <mat-form-field class="form-input-select">
+                        <i class="bi bi-chevron-down"></i>
+                        <mat-label>Role</mat-label>
+                        <mat-error *ngIf="submitted &&  userForm.get('roleId')?.hasError('required')"
+                            >Role is <strong>required</strong></mat-error
+                        >
+                        <mat-select formControlName="roleId">
+                            <mat-option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col">
+                    <label>Phone number</label>
+                    <mat-form-field appearance="outline" class="input-modal">
+                        <input matInput formControlName="phone" placeholder="Phone number" />
+                        <mat-error *ngIf="submitted &&  userForm.get('phone')?.hasError('required')"
+                            >Phone number is <strong>required</strong></mat-error
+                        >
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </mat-dialog-content>
+
+    <div class="button-blue d-flex justify-content-center align-items-center">
+        <button
+            *ngIf="!userData.id"
+            mat-raised-button
+            class="button-form-bleu"
+            (click)="onSave()"
+            [disabled]="userForm.invalid">
+            Save
+        </button>
+        <button
+            *ngIf="userData.id"
+            mat-raised-button
+            class="button-form-bleu"
+            (click)="onUpdate()"
+            [disabled]="userForm.invalid">
+            Update
+        </button>
+    </div>
+</div>

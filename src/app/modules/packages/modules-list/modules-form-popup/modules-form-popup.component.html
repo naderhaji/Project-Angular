@@ -1,0 +1,97 @@
+<div class="system-configuration">
+    <div class="row gap-3">
+        <!-- Package details -->
+        <div class="col bloc">
+            <form [formGroup]="formModule">
+                <div class="section">Module details</div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label>Code</label>
+                        <mat-form-field appearance="outline" class="input-modal">
+                            <input matInput formControlName="code" placeholder="44567765432" />
+                        </mat-form-field>
+                        <mat-error class="error-label"
+                            *ngIf="formModule.get('code')?.hasError('required') && submitted">Code is
+                            <strong>required</strong>
+                        </mat-error>
+                    </div>
+                    <div class="col">
+                        <label>Name</label>
+                        <mat-form-field appearance="outline" class="input-modal">
+                            <input matInput formControlName="name" placeholder="Name" />
+                        </mat-form-field>
+                        <mat-error
+                  class="error-label"
+                  *ngIf="formModule.get('name')?.hasError('required') && submitted"
+                  >Name is <strong>required</strong>
+              </mat-error>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label>Features</label>
+                        <mat-form-field class="select-field-list">
+                            <mat-label>Select feature</mat-label>
+                            <i class="bi bi-chevron-down"></i>
+                            <mat-select formControlName="features" multiple>
+                                <mat-option *ngFor="let feature of features" [value]="feature.id">{{ feature.name
+                                    }}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-error
+                        class="error-label"
+                        *ngIf="formModule.get('features')?.hasError('required') && submitted"
+                        >Features is <strong>required</strong>
+                    </mat-error>
+                    </div>
+                    <div class="col">
+                        <label>Types</label>
+                        <mat-form-field class="select-field-list">
+                            <mat-label>Select module Type</mat-label>
+                            <i class="bi bi-chevron-down"></i>
+                            <mat-select formControlName="moduleTypeId">
+                                <mat-option *ngFor="let moduleType of listModuleType" [value]="moduleType.id">{{ moduleType.name }}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-error
+                        class="error-label"
+                        *ngIf="formModule.get('moduleTypeId')?.hasError('required') && submitted"
+                        >This field is <strong>required</strong>
+                    </mat-error>
+                      </div>
+
+
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label>Description</label>
+                        <mat-form-field class="custom-textarea">
+                            <textarea matInput formControlName="description"></textarea>
+                        </mat-form-field>
+                        <mat-error
+                  class="error-label"
+                  *ngIf="formModule.get('description')?.hasError('required') && submitted"
+                  >Description is <strong>required</strong>
+              </mat-error>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+        <!-- Pricing bloc -->
+        <div class="col bloc">
+            <div class="section">Pricing</div>
+            <app-pricing-form [listServicePricings]="listPricing" [readOnly]="readOnly" (pricingAction)="getPricingModule($event)"></app-pricing-form>
+            <mat-error class="error-label" *ngIf="pricing.length ==0 && submitted">This field is
+                <strong>required</strong>
+            </mat-error>
+        </div>
+    </div>
+
+    <div *ngIf="!readOnly" class="button-blue d-flex justify-content-center align-items-center">
+        <button mat-raised-button class="button-form-transparent" (click)="cancel()">Cancel</button>
+        <button mat-raised-button class="button-form-bleu" (click)="actionToCall()">Save</button>
+    </div>
+</div>

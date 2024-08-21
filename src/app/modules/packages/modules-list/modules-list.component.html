@@ -1,0 +1,12 @@
+<app-table
+    [header]="headers"
+    [allData]="modulesList"
+    [actionButtons]="actionButtons"
+    [exportName]="'Modules'"
+    (editRow)="editModule($event)"
+    (onSearch)="searchModules($event)"
+    (deleteRow)="deleteModule($event)"
+    (setStatus)="setStatusModule($event)"
+    [totalLength]="totalLength"
+    (readOnly)="readOnly($event)"
+    (paginationAction)="onPageChange($event)"></app-table>

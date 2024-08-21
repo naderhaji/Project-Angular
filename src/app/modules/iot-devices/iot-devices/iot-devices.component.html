@@ -1,0 +1,15 @@
+<app-header [Cards]="Cards" [buttonLabel]="'Add IOT device'" (addElement)="addIOT_devices()" ></app-header>
+<app-table
+[header]="headers"
+[allData]="iotdevicesList"
+[actionButtons]="actionButtons"
+[exportName]="'iot-devices'"
+[showselection]="true"
+[listoptionMapped]="listoptionMapped"
+[totalLength]="totalLength"
+(paginationAction)="onPageChange($event)"
+(editRow)="editIOTdevice($event)"
+(deleteRow)="DeleteIotDevices($event)"
+(onSearch)="searchIotdevices($event)"
+(setStatus)="setStatusIotDevices($event)">
+</app-table>

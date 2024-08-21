@@ -1,0 +1,13 @@
+<app-table
+    [header]="headers"
+    [allData]="serviceList"
+    [actionButtons]="actionButtons"
+    [exportName]="'Services'"
+    (editRow)="editService($event)"
+    [totalLength]="totalLength"
+    (paginationAction)="onPageChange($event)"
+    (deleteRow)="deleteService($event)"
+    (onSearch)="searchService($event)"
+    (setStatus)="setStatusService($event)"
+    (readOnly)="readOnly($event)"
+    ></app-table>
